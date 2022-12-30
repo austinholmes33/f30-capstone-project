@@ -39,7 +39,7 @@ def login_user():
     email = request.form.get("email")
     password = request.form.get("password")
 
-    user = cred.get_user_by_email("email")
+    user = crud.get_user_by_email("email")
 
     if not user or user.password != password:
         flash("Username or password incorrect")
