@@ -17,7 +17,7 @@ def all_books():
 def show_book():
     return render_template("book_details.html")
 
-@app.route("/users", methods=["POST"])
+@app.route("/create_user", methods=["POST"])
 def create_user():
     email = request.form.get("email")
     password = request.form.get("password")
@@ -31,7 +31,7 @@ def create_user():
         db.session.add(user)
         db.session.commit()
         flash("Account creation successful")
-    return redirect("/")
+    return redirect("/login.html")
 
 
 @app.route("/login", methods=["POST"])
