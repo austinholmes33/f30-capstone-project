@@ -1,5 +1,6 @@
-from flask import flask, render_template, redirect, url_for, flash, request, session
+from flask import Flask, render_template, redirect, flash, request, session
 from model import db, connect_to_db
+from forms import LoginForm
 import crud
 
 app = Flask(__name__)
@@ -31,11 +32,13 @@ def create_user():
         db.session.add(user)
         db.session.commit()
         flash("Account creation successful")
-    return redirect("/login.html")
+    return redirect("/login")
 
 
 @app.route("/login", methods=["POST"])
 def login_user():
+
+    form = LoginForm(request.form)
     email = request.form.get("email")
     password = request.form.get("password")
 
@@ -48,6 +51,12 @@ def login_user():
         flash("Login Successful")
     return redirect("/")
 
+@app.route("/logout")
+def logout_user():
+    del session["user_email"]
+    flash("Logout Successful")
+    return redirect("/login")
+
 if __name__ == "__main__":
     connect_to_db(app)
-    app.run(host="0.0.0.0", debug=True)
+    app.run(debug=True, port=5000, host="localhost")

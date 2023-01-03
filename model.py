@@ -11,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String, unique=True, nullable=False)
     password = db.Column(db.String, nullable=False)
     first_name = db.Column(db.String, nullable=False)
-    last_name = db.Column(db.String, nullable=False)
+    last_name = db.Column(db.String, nullable=True)
 
     def __repr__(self):
         return f"User id={self.id} email{self.email}"
@@ -23,7 +23,7 @@ class Book(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     title = db.Column(db.String, nullable=False)
     length = db.Column(db.Integer, nullable=False)
-    overview = db.Column(db.String)
+    overview = db.Column(db.String, nullable=True)
 
     def __repr__(self):
         return f"Book title {self.title}"
