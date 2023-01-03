@@ -33,8 +33,8 @@ class Users_book(db.Model):
     __tablename__ = "users_books"
 
     id = db.Column(db.Integer, autoincrement=True, primaryu_key=True)
-    users_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    books_id = db.Column(db.Integer, db.ForeignKey("books.id"))
+    users_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    books_id = db.Column(db.Integer, db.ForeignKey(Book.id))
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
 
@@ -46,7 +46,7 @@ class Thought(db.Model):
 
     __tablename__ = "thoughts"
 
-    users_books_id = db.Column(db.Integer, db.ForeignKey("users_books.id"))
+    users_books_id = db.Column(db.Integer, db.ForeignKey(Users_book.id))
     thoughts = db.Column(db.String, nullable=False)
 
     def __repr__(self):

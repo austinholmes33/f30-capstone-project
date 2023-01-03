@@ -1,5 +1,5 @@
-from flask import Flask, render_template, redirect, flash, request, session
-from model import db, connect_to_db
+from flask import Flask, render_template, url_for, redirect, flash, request, session
+from model import db, connect_to_db, User
 from forms import LoginForm
 import crud
 
@@ -25,24 +25,25 @@ def create_user():
 
     user = crud.get_user_by_email("email")
 
-    if user:
+    if User.query.filter_by(user=user).first() == None:
         flash("Sorry, an account already exists with that email")
     else:
         user = crud.create_user(email, password)
         db.session.add(user)
         db.session.commit()
-        flash("Account creation successful")
-    return redirect("/login")
+        flash("Account Creation Successful")
+    return redirect(url_for("login"))
 
 
 @app.route("/login", methods=["POST"])
 def login_user():
 
     form = LoginForm(request.form)
-    email = request.form.get("email")
-    password = request.form.get("password")
 
-    user = crud.get_user_by_email("email")
+    email = form.email.get("email")
+    password = form.password.get("password")
+
+    user = crud.get_user_by_email(email)
 
     if not user or user.password != password:
         flash("Username or password incorrect")
@@ -55,7 +56,7 @@ def login_user():
 def logout_user():
     del session["user_email"]
     flash("Logout Successful")
-    return redirect("/login")
+    return redirect(url_for("login"))
 
 if __name__ == "__main__":
     connect_to_db(app)
