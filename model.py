@@ -22,6 +22,7 @@ class Book(db.Model):
 
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     title = db.Column(db.String, nullable=False)
+    author = db.Column(db.String, nullable=False)
     length = db.Column(db.Integer, nullable=False)
     overview = db.Column(db.String, nullable=True)
 

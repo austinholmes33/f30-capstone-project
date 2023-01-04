@@ -13,5 +13,6 @@ class LoginForm(FlaskForm):
 
 class AddBookForm(FlaskForm):
     title = StringField("Title", [validators.InputRequired()])
+    author = StringField("Author", [validators.InputRequired()])
     length = IntegerField("Length", [validators.InputRequired()])
     overview = StringField("Overview")
