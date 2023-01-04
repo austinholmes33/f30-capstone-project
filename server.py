@@ -10,13 +10,16 @@ app.secret_key = "mysecretkey"
 def homepage():
     return render_template("homepage.html")
 
-@app.route("books")
-def all_books():    
-    return render_template("books.html")
-
 @app.route("/books/<id>")
 def show_book():
     return render_template("book_details.html")
+
+# @app.route("/add_book", methods=["POST"])
+# def add_book():
+#     current_user = session.get("user_email")
+
+#     user = crud.get_user_by_email(current_user)
+#     newbook = crud.create_book(title, author, length, overview)
 
 @app.route("/create_user", methods=["POST"])
 def create_user():

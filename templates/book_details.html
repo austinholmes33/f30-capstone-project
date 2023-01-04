@@ -1,4 +1,24 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<!-- Display a single book with thoughts and progress bar -->
+
+<div class="title">
+    <h1>{{ book.title }}</h1>
+</div>
+
+<div class="author">
+    <h2>{{ book.author }}</h2>
+</div>
+
+<div class="length">
+    <h4>{{ book.length }}</h4>
+</div>
+
+<div class="overview">
+    <p>
+        {{ book.overview }}
+    </p>
+</div>
+
 {% endblock %}

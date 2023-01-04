@@ -2,13 +2,15 @@ from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, IntegerField, SubmitField, validators
 
 class CreateUserForm(FlaskForm):
-    pass
-
-class LoginForm(FlaskForm):
-    username = StringField("Username", [validators.InputRequired()])
+    email = StringField("Email", [validators.InputRequired()])
     password = PasswordField("Password", [validators.InputRequired()])
     first_name = StringField("First Name", [validators.InputRequired()])
     last_name = StringField("Last Name")
+    submit = SubmitField()
+
+class LoginForm(FlaskForm):
+    email = StringField("Email", [validators.InputRequired()])
+    password = PasswordField("Password", [validators.InputRequired()])
     submit = SubmitField()
 
 class AddBookForm(FlaskForm):
@@ -16,3 +18,4 @@ class AddBookForm(FlaskForm):
     author = StringField("Author", [validators.InputRequired()])
     length = IntegerField("Length", [validators.InputRequired()])
     overview = StringField("Overview")
+    submit = SubmitField()

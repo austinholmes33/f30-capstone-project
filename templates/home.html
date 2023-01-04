@@ -1,4 +1,40 @@
 {% extends 'base.html' %}
 
 {% block body %}
+
+<div class="add-book-header">
+    <h2>Add a Book to Your Catalog</h2>
+</div>
+    <div class="add-book-form">
+    <form action="/" method="POST">
+        <p>
+            Email <input type="text" name="email">
+        </p>
+        <p>
+            Password <input type="password" name="password">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+    </div>
+
+    <div class="all-books-header">
+        <h1>Your Books</h1>
+    </div>
+    
+    <div class="currently-reading-header">
+        <h2>Currently Reading</h2>
+        <ul class="currently-reading-list">
+            {% for book in books %}
+             
+            <li>
+                <a class="book-link" href="/books/{{ book.book_id }}">
+                    {{ book.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
 {% endblock %}
