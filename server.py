@@ -68,4 +68,4 @@ def logout_user():
 
 if __name__ == "__main__":
     connect_to_db(app)
-    app.run(debug=True, port=5000, host="localhost")
+    app.run(debug=True)
