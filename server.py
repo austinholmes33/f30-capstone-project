@@ -1,10 +1,12 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
 from model import db, connect_to_db, User
-from forms import LoginForm
+from forms import LoginForm, CreateUserForm
+import jinja2
 import crud
 
 app = Flask(__name__)
-app.secret_key = "mysecretkey"
+app.config["SECRET_KEY"] = "mysecretkey"
+app.jinja_env.undefined = jinja2.StrictUndefined
 
 @app.route("/")
 def homepage():
@@ -23,8 +25,11 @@ def show_book():
 
 @app.route("/create_user", methods=["POST"])
 def create_user():
-    email = request.form.get("email")
-    password = request.form.get("password")
+
+    form = CreateUserForm(request.form)
+
+    email = form.email.get("email")
+    password = form.password.get("password")
 
     user = crud.get_user_by_email("email")
 
@@ -35,7 +40,7 @@ def create_user():
         db.session.add(user)
         db.session.commit()
         flash("Account Creation Successful")
-    return redirect(url_for("login"))
+    return redirect(url_for("login_user"))
 
 
 @app.route("/login", methods=["POST"])
@@ -53,13 +58,13 @@ def login_user():
     else:
         session["user_email"] = user.email
         flash("Login Successful")
-    return redirect("/")
+    return render_template("home.html")
 
 @app.route("/logout")
 def logout_user():
     del session["user_email"]
     flash("Logout Successful")
-    return redirect(url_for("login"))
+    return redirect(url_for("login_user"))
 
 if __name__ == "__main__":
     connect_to_db(app)

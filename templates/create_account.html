@@ -5,16 +5,13 @@
     <h2>Create an Account</h2>
     </div>
     <div class="account-form">
-    <form action="/users" method="POST">
-        <p>
-            Email <input type="text" name="email">
-        </p>
-        <p>
-            Password <input type="password" name="password">
-        </p>
-        <p>
-            <input type="submit">
-        </p>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.email.label }} {{ form.email() }}
+        {{ form.password.label }} {{ form.password() }}
+        {{ form.first_name.label }} {{ form.first_name() }}
+        {{ form.last_name.label }} {{ form.last_name() }}
+        {{ form.submit() }}
     </form>
     </div>
 {% endblock %}
