@@ -1,12 +1,16 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
 from model import db, connect_to_db, User
 from forms import LoginForm, CreateUserForm
+from flask_login import LoginManager
 import jinja2
 import crud
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "mysecretkey"
 app.jinja_env.undefined = jinja2.StrictUndefined
+# login_manager = LoginManager()
+# login_manager.init_app(app)
+# login_manager.login_view = 'login'
 
 @app.route("/")
 def homepage():

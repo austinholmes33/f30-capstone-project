@@ -20,3 +20,6 @@ class AddBookForm(FlaskForm):
     length = IntegerField("Length", validators=[DataRequired()])
     overview = TextAreaField("Overview")
     submit = SubmitField()
+
+# SOME SORT OF UPDATE FORM FOR PAGES READ
+# TO BE USED ON BOOK_DETAILS PAGE
