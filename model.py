@@ -15,7 +15,10 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String, nullable=True)
 
     def __init__(self, email, password, first_name, last_name):
-
+        self.email = email
+        self.password = password
+        self.first_name = first_name
+        self.last_name = last_name
 
 # get_user_books() function associated with user
 
@@ -33,6 +36,13 @@ class Book(db.Model):
     overview = db.Column(db.String, nullable=True)
     cover_img = db.Column(db.String, nullable=False)
 
+    def __init__(self, title, author, length, overview, cover_img):
+        self.title = title
+        self.author = author
+        self.length = length
+        self.overview = overview
+        self.cover_img = cover_img
+
     def __repr__(self):
         return f"Book title {self.title}"
 
@@ -45,6 +55,12 @@ class Users_book(db.Model):
     books_id = db.Column(db.Integer, db.ForeignKey("books.id"))
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
+
+    def __init__(self, users_id, books_id, pages_read, currently_reading):
+        self.users_id = users_id
+        self.books_id = books_id
+        self.pages_read = pages_read
+        self.currently_reading = currently_reading
 
 # get_book() gets book object from linking table
 
@@ -59,6 +75,11 @@ class Thought(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     users_books_id = db.Column(db.Integer, db.ForeignKey("users_books.id"))
     thoughts = db.Column(db.String, nullable=False)
+
+    def __init__(self, users_books_id, thoughts):
+        self.users_books_id = users_books_id
+        self.thoughts = thoughts
+
 
     def __repr__(self):
         return f"Thought thoughts{self.thoughts}"
