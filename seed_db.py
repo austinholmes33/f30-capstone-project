@@ -1,7 +1,7 @@
 import os
-import json
 import crud
 import model
+from model import User, Book, Users_book, Thought
 import server
 
 os.system("dropdb books")
@@ -11,26 +11,36 @@ model.connect_to_db(server.app)
 model.db.drop_all()
 model.db.create_all()
 
-with open('data/books.json') as f:
-        book_data = json.loads(f.read())
 
-books_in_db = []
+user1 = User("user1@test.com", "test", "ted", "d")
+user2 = User("user2@test.com", "test", "sue", "f")
+user3 = User("user3@test.com", "test", "bob", "b")
+user4 = User("user4@test.com", "test", "guy", "q")
+user5 = User("user5@test.com", "test", "hillary", "t")
+user6 = User("user6@test.com", "test", "toni", "c")
+user7 = User("user7@test.com", "test", "brad", "o")
 
-for book in book_data:
-    title = book["title"]
-    author = book["author"]
-    length = book["length"]
-    overview = book["overview"]
-
-    db_book = crud.create_book(title, author, length, overview)
-    books_in_db.append(db_book)
-
-model.db.session.add_all(books_in_db)
+model.db.session.add_all()
 model.db.session.commit()
 
-for x in range(10):
-    email = f"user{x}@test.com"
-    password = "test"
+book1 = Book("The Brothers Karamazov", "Fyodor Dostoevsky", 840, "blah")
+book2 = Book("The Crossing", "Cormac McCarthy", 425, "blah")
+book3 = Book("Anna Karenina", "Leo Tolstoy", 864, "blah")
+book4 = Book("The Count of Monte Cristo", "Alexandre Dumas", 1152, "blah")
+book5 = Book("The Magic Mountain", "Thomas Mann", 720, "blah")
+book6 = Book("One Hundred Years of Solitude", "Gabriel Garcia Marquez", 417, "blah")
+book7 = Book("In Cold Blood", "Truman Capote", 432, "blah")
+book8 = Book("The Death Ship", "B. Traven", 384, "blah")
 
-    user = crud.create_user(email, password)
-    model.db.session.add(user)
+model.db.session.add_all()
+model.db.session.commit()
+
+
+
+# for x in range(10):
+#     email = f"user{x}@test.com"
+#     password = "test"
+
+
+#     user = crud.create_user(email, password)
+#     model.db.session.add(user)
