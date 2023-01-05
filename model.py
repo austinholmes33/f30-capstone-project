@@ -13,6 +13,8 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String, nullable=False)
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=True)
+    
+# get_user_books() function associated with user
 
     def __repr__(self):
         return f"User id={self.id} email{self.email}"
@@ -39,6 +41,8 @@ class Users_book(db.Model):
     books_id = db.Column(db.Integer, db.ForeignKey(Book.id))
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
+
+# get_book() gets book object from linking table
 
     def __repr__(self):
         return f"Users_book id{self.id}"
