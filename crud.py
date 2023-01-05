@@ -1,4 +1,4 @@
-from model import db, connect_to_db, User, Book, Users_book, Thought
+from model import db, connect_to_db, User, Book, Users_book
 
 def create_user(email, password):
     user = User(

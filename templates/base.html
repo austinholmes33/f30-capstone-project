@@ -21,13 +21,16 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('all_books') }}">Books</a>
+                <a class="nav-link" href="{{ url_for('create_user') }}">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login') }}">Log In</a>
+                <a class="nav-link" href="{{ url_for('show_book') }}">Books</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                <a class="nav-link" href="{{ url_for('login_user') }}">Log In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout_user') }}">Log Out</a>
               </li>
             </ul>
           </div>

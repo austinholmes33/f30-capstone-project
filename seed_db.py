@@ -1,14 +1,13 @@
 import os
 import crud
 import model
-from model import User, Book, Users_book, Thought
+from model import db, connect_to_db, User, Book, Users_book
 import server
 
 os.system("dropdb books")
 os.system("createdb books")
 
 model.connect_to_db(server.app)
-model.db.drop_all()
 model.db.create_all()
 
 
@@ -35,7 +34,7 @@ book8 = Book("The Death Ship", "B. Traven", 384, "blah")
 model.db.session.add_all()
 model.db.session.commit()
 
-
+user_book1 = Users_book(0, 0, 25, True)
 
 # for x in range(10):
 #     email = f"user{x}@test.com"
@@ -44,3 +43,7 @@ model.db.session.commit()
 
 #     user = crud.create_user(email, password)
 #     model.db.session.add(user)
+
+# if __name__ == "__main__":
+#     from server import app
+#     connect_to_db(app)

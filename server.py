@@ -22,7 +22,7 @@ def load_user(user_id):
 def homepage():
     return render_template("homepage.html")
 
-@app.route("/books/<id>")
+@app.route("/book_details")
 @login_required
 def show_book():
     return render_template("book_details.html")
@@ -34,11 +34,12 @@ def show_book():
 #     user = crud.get_user_by_email(current_user)
 #     newbook = crud.create_book(title, author, length, overview)
 
-@app.route("/create_user", methods=["POST"])
+@app.route("/create_user", methods=["GET", "POST"])
 def create_user():
 
     form = CreateUserForm(request.form)
-
+    if request.method == "GET":
+        return render_template("create_user.html", form=form)
     email = form.email.get("email")
     password = form.password.get("password")
 

@@ -2,7 +2,7 @@ import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 
-db = SQLAlchemy
+db = SQLAlchemy()
 
 class User(db.Model, UserMixin):
 
@@ -13,7 +13,10 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String, nullable=False)
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=True)
-    
+
+    def __init__(self, email, password, first_name, last_name):
+
+
 # get_user_books() function associated with user
 
     def __repr__(self):
@@ -28,6 +31,7 @@ class Book(db.Model):
     author = db.Column(db.String, nullable=False)
     length = db.Column(db.Integer, nullable=False)
     overview = db.Column(db.String, nullable=True)
+    cover_img = db.Column(db.String, nullable=False)
 
     def __repr__(self):
         return f"Book title {self.title}"
@@ -36,9 +40,9 @@ class Users_book(db.Model):
 
     __tablename__ = "users_books"
 
-    id = db.Column(db.Integer, autoincrement=True, primaryu_key=True)
-    users_id = db.Column(db.Integer, db.ForeignKey(User.id))
-    books_id = db.Column(db.Integer, db.ForeignKey(Book.id))
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    users_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    books_id = db.Column(db.Integer, db.ForeignKey("books.id"))
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
 
@@ -52,7 +56,8 @@ class Thought(db.Model):
 
     __tablename__ = "thoughts"
 
-    users_books_id = db.Column(db.Integer, db.ForeignKey(Users_book.id))
+    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    users_books_id = db.Column(db.Integer, db.ForeignKey("users_books.id"))
     thoughts = db.Column(db.String, nullable=False)
 
     def __repr__(self):
@@ -62,10 +67,10 @@ class Thought(db.Model):
 
 def connect_to_db(flask_app, db_uri=os.environ["DATABASE_URI"], echo=False):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-    flask_app.config["TRACK_MODIFICATIONS"] = False
+    flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     db.app = flask_app
-    db.init_app = flask_app
+    db.init_app(flask_app) 
     print("Connected to db")
 
 
