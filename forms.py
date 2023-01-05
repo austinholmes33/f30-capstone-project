@@ -1,17 +1,17 @@
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, IntegerField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, Email
+from wtforms.validators import DataRequired, Email, Length
 
 class CreateUserForm(FlaskForm):
-    email = StringField("Email", validators=[Email()])
-    password = PasswordField("Password", validators=[DataRequired()])
+    email = StringField("Email", validators=[DataRequired(), Email(), Length(min=6, max=255)])
+    password = PasswordField("Password", validators=[DataRequired(), Length(min=3, max=255)])
     first_name = StringField("First Name", validators=[DataRequired()])
     last_name = StringField("Last Name")
     submit = SubmitField()
 
 class LoginForm(FlaskForm):
-    email = StringField("Email", validators=[Email()])
-    password = PasswordField("Password", validators=[DataRequired()])
+    email = StringField("Email", validators=[DataRequired(), Email(), Length(min=6, max=255)])
+    password = PasswordField("Password", validators=[DataRequired(), Length(min=3, max=255)])
     submit = SubmitField()
 
 class AddBookForm(FlaskForm):

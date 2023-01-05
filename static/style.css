@@ -1,0 +1,39 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.account-header {
+
+}
+
+.account-form {
+
+}
+
+.add-book-header {
+
+}
+
+.add-book-form {
+    
+}
+
+.book-title {
+    display: flex;
+    justify-content: center;
+}
+
+.book-author {
+    display: flex;
+    justify-content: center;
+}
+
+.book-length {
+    display: flex;
+    justify-content: center;
+}
+
+.book-overview {
+    display: flex;
+    justify-content: center;
+}
