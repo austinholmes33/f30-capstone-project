@@ -47,11 +47,12 @@ def create_user():
     return redirect(url_for("login_user"))
 
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login_user():
 
     form = LoginForm(request.form)
-
+    if request.method == "GET":
+        return render_template("login.html", form=form)
     email = form.email.get("email")
     password = form.password.get("password")
 
