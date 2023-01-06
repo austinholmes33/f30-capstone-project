@@ -14,11 +14,11 @@ def get_user_by_id(user_id):
 def get_user_by_email(email):
     return User.query.filter_by(email=email).first()
 
-def create_book(title, author, length, overview):
+def create_book(title, author, pages, overview):
     book = Book(
         title=title,
         author=author,
-        length=length,
+        pages=pages,
         overview=overview
     )
 

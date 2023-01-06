@@ -9,17 +9,17 @@
     <h2>Add a Book to Your Catalog</h2>
 </div>
     <div class="add-book-form">
-    <form action="{{ url_for=add_book }}" method="POST">
+    <form action="{{ url_for('add_book') }}" method="POST">
         {{ form.hidden_tag() }}
-        {{ form.title.label(class="form-label") }} {{ form.title() }}
+        {{ form.title.label(class="form-label") }} {{ form.title }}
         <br>
-        {{ form.author.label(class="form-label") }} {{ form.author() }}
+        {{ form.author.label(class="form-label") }} {{ form.author }}
         <br>
-        {{ form.length.label(class="form-label") }} {{ form.length() }}
+        {{ form.pages.label(class="form-label") }} {{ form.pages }}
         <br>
-        {{ form.overview.label(class="form-label") }} {{ form.overview() }}
+        {{ form.overview.label(class="form-label") }} {{ form.overview }}
         <br>
-        {{ form.submit() }}
+        {{ form.submit }}
     </form>
     </div>
 
@@ -27,12 +27,12 @@
         <h1>Your Books</h1>
     </div>
 
-    {% for book in current_user.books %}
+    {% for book in current_user.get_books() %}
         <div>
-        {{ book.cover_img }}
+        <img class="" src="{{ book.cover_img }}"/><br>
         {{ book.title }}
         {{ book.author }}
-        {{ book.length }}
+        {{ book.pages }}
         {{ book.overview }}
         </div>
 
@@ -43,19 +43,6 @@ user_book.get_book().title - same for author
 user_book "currently_reading"
 user_book "pages_read" -->
 
-    <div class="currently-reading-header">
-        <h2>Currently Reading</h2>
-        <ul class="currently-reading-list">
-            {% for book in books %}
-             
-            <li>
-                {{ book.cover_img }}
-                <a class="book-link" href="/books/{{ book.book_id }}">
-                    {{ book.title }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+
 
 {% endblock %}

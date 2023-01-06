@@ -14,8 +14,8 @@
     <h2>{{ book.author }}</h2>
 </div>
 
-<div class="book-length">
-    <h4>{{ book.length }}</h4>
+<div class="book-pages">
+    <h4>{{ book.pages }}</h4>
 </div>
 
 <div class="book-overview">
@@ -28,25 +28,6 @@
     <div id="progress-bar">1%</div>
 </div>
 <script>
-    var i = 0;
-    function progress() {
-    if (i == 0) {
-        i = 1;
-        var elem = document.getElementById("progress-bar");
-        var width = 10
-        var id = setInterval(frame, 10);
-        function frame() {
-            if (width >= 100) {
-                clearInterval(id);
-                i = 0;
-            } else {
-                width++;
-                elem.style.width = width + "%";
-                elem.innterHTML = width + "%";
-            }
-        }
-    }
 
-}
 </script>
 {% endblock %}

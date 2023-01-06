@@ -32,10 +32,10 @@ def add_book():
     form = AddBookForm()
     title = form.title.data
     author = form.author.data
-    length = form.length.data
+    pages = form.pages.data
     overview = form.overview.data
 
-    new_book = Book(current_user.id, title, author, length, overview)
+    new_book = Book(current_user.id, title, author, pages, overview)
     try:
         db.session.add(new_book)
         db.session.commit()
@@ -63,7 +63,7 @@ def create_user():
     if password != confirm_password:
         return "Passwords do not match"
     elif password == confirm_password:
-        new_user = User(email, password, confirm_password, first_name, last_name)
+        new_user = User(email, password, first_name, last_name)
         db.session.add(new_user)
         db.session.commit()
         flash("Account Creation Successful")
@@ -83,10 +83,11 @@ def login():
         user = crud.get_user_by_email(email)
 
     if user:
-        if user.check_password(password):
+        if user.password == password:
             login_user(user)
             flash("Login Successful")
-            return render_template("home.html")
+            form=AddBookForm()
+            return render_template("home.html", form=form)
     elif not user or user.password != password:
         flash("Username or password incorrect")
         return redirect(url_for("login"))

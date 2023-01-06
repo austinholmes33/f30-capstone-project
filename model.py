@@ -14,9 +14,6 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=True)
 
-    books = db.relationship("Book", backref="user", lazy=True)
-    # users_books = db.relationship("User", backref="users_book", lazy=True)
-
     def __init__(self, email, password, first_name, last_name):
         self.email = email
         self.password = password
@@ -24,6 +21,9 @@ class User(db.Model, UserMixin):
         self.last_name = last_name
 
 # get_user_books() function associated with user
+
+    def get_books(self):
+        return [book.book for book in self.users_books]
 
     def __repr__(self):
         return f"User id={self.id} email{self.email}"
@@ -35,14 +35,14 @@ class Book(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     title = db.Column(db.String, nullable=False)
     author = db.Column(db.String, nullable=False)
-    length = db.Column(db.Integer, nullable=False)
+    pages = db.Column(db.Integer, nullable=False)
     overview = db.Column(db.String, nullable=True)
     cover_img = db.Column(db.String, nullable=False)
 
-    def __init__(self, title, author, length, overview, cover_img):
+    def __init__(self, title, author, pages, overview, cover_img):
         self.title = title
         self.author = author
-        self.length = length
+        self.pages = pages
         self.overview = overview
         self.cover_img = cover_img
 
@@ -59,6 +59,8 @@ class Users_book(db.Model):
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
 
+    book = db.relationship("Book", backref="users_books", lazy=True)
+    user = db.relationship("User", backref="users_books", lazy=True)
 
 
     def __init__(self, users_id, books_id, pages_read, currently_reading):

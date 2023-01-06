@@ -34,10 +34,13 @@ book8 = Book("The Death Ship", "B. Traven", 384, "blah", "https://i.gr-assets.co
 model.db.session.add_all([book1, book2, book3, book4, book5, book6, book7, book8])
 model.db.session.commit()
 
-# user_book1 = Users_book(0, 0, 25, True)
+user_book1 = Users_book(1, 1, 25, True)
+user_book2 = Users_book(1, 2, 57, True)
+user_book3 = Users_book(1, 3, 12, False)
 
-# model.db.session.add(user_book1)
-# model.db.session.commit()
+
+model.db.session.add_all([user_book1, user_book2, user_book3])
+model.db.session.commit()
 
 # for x in range(10):
 #     email = f"user{x}@test.com"

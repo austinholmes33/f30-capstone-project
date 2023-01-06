@@ -28,7 +28,7 @@ body {
     justify-content: center;
 }
 
-.book-length {
+.book-pages {
     display: flex;
     justify-content: center;
 }
@@ -50,4 +50,8 @@ body {
     text-align: center;
     line-height: 40px;
     color: white;
+}
+
+.register-link {
+
 }
