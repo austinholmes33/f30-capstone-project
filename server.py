@@ -55,7 +55,7 @@ def create_user():
     confirm_password = form.confirm_password.data
     first_name = form.first_name.data
     last_name = form.last_name.data
-    user = crud.get_user_by_email("email")
+    user = User.query.filter_by(email=email).first()
 
     if user:
         flash("Sorry, an account already exists with that email")
@@ -63,7 +63,7 @@ def create_user():
     if password != confirm_password:
         return "Passwords do not match"
     elif password == confirm_password:
-        new_user = crud.create_user(email, password, first_name, last_name)
+        new_user = User(email, password, confirm_password, first_name, last_name)
         db.session.add(new_user)
         db.session.commit()
         flash("Account Creation Successful")
@@ -82,13 +82,14 @@ def login():
 
         user = crud.get_user_by_email(email)
 
-    if:
+    if user:
         if user.check_password(password):
             login_user(user)
             flash("Login Successful")
             return render_template("home.html")
     elif not user or user.password != password:
         flash("Username or password incorrect")
+        return redirect(url_for("login"))
 
 @app.route("/logout")
 def logout_user():
