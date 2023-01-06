@@ -38,6 +38,7 @@ user_book "pages_read" -->
             {% for book in books %}
              
             <li>
+                {{ book.cover_img }}
                 <a class="book-link" href="/books/{{ book.book_id }}">
                     {{ book.title }}
                 </a>
