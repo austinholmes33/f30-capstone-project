@@ -7,11 +7,13 @@
     <div class="account-form">
     <form action="{{ url_for('create_user') }}" method="POST">
         {{ form.hidden_tag() }}
-        {{ form.email.label }} {{ form.email() }}
+        {{ form.email.label(class="form-label") }} {{ form.email() }}
         <br>
-        {{ form.password.label }} {{ form.password() }}
+        {{ form.password.label(class="form-label") }} {{ form.password() }}
         <br>
-        {{ form.first_name.label }} {{ form.first_name() }}
+        {{ form.confirm_password.label(class="form-label") }} {{ form.confirm_password() }}
+        <br>
+        {{ form.first_name.label(class="form-label") }} {{ form.first_name() }}
         <br>
         {{ form.last_name.label }} {{ form.last_name() }}
         <br>

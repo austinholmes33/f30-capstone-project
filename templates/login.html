@@ -6,11 +6,11 @@
     <h2>Log In</h2>
 </div>
     <div class="login-form">
-    <form action="{{ url_for('login_user') }}" method="POST">
+    <form action="{{ url_for('login') }}" method="POST">
         {{ form.hidden_tag() }}
-        {{ form.email.label }} {{ form.email() }}
+        {{ form.email.label(class="form-label") }} {{ form.email() }}
         <br>
-        {{ form.password.label }} {{ form.password() }}
+        {{ form.password.label(class="form-label") }} {{ form.password() }}
         <br>
         {{ form.submit() }}
     </form>

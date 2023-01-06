@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
 from model import db, connect_to_db, User
 from forms import LoginForm, CreateUserForm
-from flask_login import LoginManager, login_user, login_required
+from flask_login import LoginManager, login_user, login_required, logout_user
 import jinja2
 import crud
 
@@ -52,33 +52,34 @@ def create_user():
         db.session.add(user)
         db.session.commit()
         flash("Account Creation Successful")
-    return redirect(url_for("login_user"))
+    return redirect(url_for("login"))
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login_user():
+def login():
 
-    form = LoginForm(request.form)
+    form = LoginForm()
     if request.method == "GET":
         return render_template("login.html", form=form)
-    email = form.email.get("email")
-    password = form.password.get("password")
-
-    user = crud.get_user_by_email(email)
-
-    if not user or user.password != password:
-        flash("Username or password incorrect")
     else:
-        # session["user_email"] = user.email
-        login_user(user)
-        flash("Login Successful")
-        return render_template("home.html")
+        email = form.email.data
+        password = form.password.data
+
+        user = crud.get_user_by_email(email)
+
+    if:
+        if user.check_password(password):
+            login_user(user)
+            flash("Login Successful")
+            return render_template("home.html")
+    elif not user or user.password != password:
+        flash("Username or password incorrect")
 
 @app.route("/logout")
 def logout_user():
-    del session["user_email"]
+    logout_user()
     flash("Logout Successful")
-    return redirect(url_for("login_user"))
+    return redirect(url_for("login"))
 
 if __name__ == "__main__":
     connect_to_db(app)
