@@ -19,7 +19,7 @@ class AddBookForm(FlaskForm):
     title = StringField("Title", validators=[DataRequired(), Length(min=6, max=255)])
     author = StringField("Author", validators=[DataRequired(), Length(min=6, max=255)])
     length = IntegerField("Length", validators=[DataRequired(), Length(max=255)])
-    overview = TextAreaField("Overview")
+    overview = TextAreaField("Overview", Length(max=255))
     submit = SubmitField()
 
 # SOME SORT OF UPDATE FORM FOR PAGES READ

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
-from model import db, connect_to_db, User
-from forms import LoginForm, CreateUserForm
-from flask_login import LoginManager, login_user, login_required, logout_user
+from model import db, connect_to_db, User, Book
+from forms import LoginForm, CreateUserForm, AddBookForm
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 import jinja2
 import crud
 
@@ -27,12 +27,21 @@ def homepage():
 def show_book():
     return render_template("book_details.html")
 
-# @app.route("/add_book", methods=["POST"])
-# def add_book():
-#     current_user = session.get("user_email")
+@app.route("/add_book", methods=["POST"])
+def add_book():
+    form = AddBookForm()
+    title = form.title.data
+    author = form.author.data
+    length = form.length.data
+    overview = form.overview.data
 
-#     user = crud.get_user_by_email(current_user)
-#     newbook = crud.create_book(title, author, length, overview)
+    new_book = Book(current_user.id, title, author, length, overview)
+    try:
+        db.session.add(new_book)
+        db.session.commit()
+        return redirect(url_for("home"))
+    except:
+        print("Something went wrong")
 
 @app.route("/create_user", methods=["GET", "POST"])
 def create_user():

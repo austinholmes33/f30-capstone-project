@@ -10,7 +10,7 @@
     <h2>Add a Book to Your Catalog</h2>
 </div>
     <div class="add-book-form">
-    <form method="POST">
+    <form action="{{ url_for=add_book }}" method="POST">
         {{ form.hidden_tag() }}
         {{ form.title.label(class="form-label") }} {{ form.title() }}
         <br>
@@ -29,11 +29,13 @@
     </div>
 
     {% for book in current_user.books %}
+        <div>
         {{ book.cover_img }}
         {{ book.title }}
         {{ book.author }}
         {{ book.length }}
         {{ book.overview }}
+        </div>
 
     {% endfor %}
     
