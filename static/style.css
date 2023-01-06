@@ -53,5 +53,10 @@ body {
 }
 
 .register-link {
+    text-decoration: underline;
+}
 
+.book-cover-img {
+    width: 450px;
+    height: 400px;
 }

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
-from model import db, connect_to_db, User, Book
+from model import db, connect_to_db, User, Book, Users_book
 from forms import LoginForm, CreateUserForm, AddBookForm
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 import jinja2
@@ -22,10 +22,11 @@ def load_user(user_id):
 def homepage():
     return render_template("home.html")
 
-@app.route("/book_details")
+@app.route("/book_details/<book_id>")
 @login_required
-def show_book():
-    return render_template("book_details.html")
+def show_book(book_id):
+    book = Users_book(book_id)
+    return render_template("book_details.html", book=book)
 
 @app.route("/add_book", methods=["POST"])
 def add_book():
