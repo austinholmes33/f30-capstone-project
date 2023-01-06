@@ -22,11 +22,11 @@ def load_user(user_id):
 def homepage():
     return render_template("home.html")
 
-@app.route("/book_details/<book_id>")
+@app.route("/book_details")
 @login_required
-def show_book(book_id):
-    book = Users_book(book_id)
-    return render_template("book_details.html", book=book)
+def show_book():
+    # book = Users_book(book_id)
+    return render_template("book_details.html")
 
 @app.route("/add_book", methods=["POST"])
 def add_book():
@@ -94,10 +94,10 @@ def login():
         return redirect(url_for("login"))
 
 @app.route("/logout")
-def logout_user():
+def logout():
     logout_user()
     flash("Logout Successful")
-    return redirect(url_for("login"))
+    return redirect(url_for('login'))
 
 if __name__ == "__main__":
     connect_to_db(app)
