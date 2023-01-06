@@ -16,9 +16,9 @@ class LoginForm(FlaskForm):
     submit = SubmitField()
 
 class AddBookForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired()])
-    author = StringField("Author", validators=[DataRequired()])
-    length = IntegerField("Length", validators=[DataRequired()])
+    title = StringField("Title", validators=[DataRequired(), Length(min=6, max=255)])
+    author = StringField("Author", validators=[DataRequired(), Length(min=6, max=255)])
+    length = IntegerField("Length", validators=[DataRequired(), Length(max=255)])
     overview = TextAreaField("Overview")
     submit = SubmitField()
 

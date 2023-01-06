@@ -14,6 +14,9 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=True)
 
+    books = db.relationship("Book", backref="user", lazy=True)
+    # users_books = db.relationship("User", backref="users_book", lazy=True)
+
     def __init__(self, email, password, first_name, last_name):
         self.email = email
         self.password = password
@@ -55,6 +58,8 @@ class Users_book(db.Model):
     books_id = db.Column(db.Integer, db.ForeignKey("books.id"))
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
+
+
 
     def __init__(self, users_id, books_id, pages_read, currently_reading):
         self.users_id = users_id

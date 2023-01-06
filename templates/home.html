@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
 
@@ -26,6 +27,15 @@
     <div class="all-books-header">
         <h1>Your Books</h1>
     </div>
+
+    {% for book in current_user.books %}
+        {{ book.cover_img }}
+        {{ book.title }}
+        {{ book.author }}
+        {{ book.length }}
+        {{ book.overview }}
+
+    {% endfor %}
     
 <!-- for loop for user_book in current_user.get_user books()
 user_book.get_book().title - same for author
