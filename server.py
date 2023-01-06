@@ -37,19 +37,25 @@ def show_book():
 @app.route("/create_user", methods=["GET", "POST"])
 def create_user():
 
-    form = CreateUserForm(request.form)
+    form = CreateUserForm()
     if request.method == "GET":
         return render_template("create_user.html", form=form)
-    email = form.email.get("email")
-    password = form.password.get("password")
 
+    email = form.email.data
+    password = form.password.data
+    confirm_password = form.confirm_password.data
+    first_name = form.first_name.data
+    last_name = form.last_name.data
     user = crud.get_user_by_email("email")
 
-    if User.query.filter_by(user=user).first() == None:
+    if user:
         flash("Sorry, an account already exists with that email")
-    else:
-        user = crud.create_user(email, password)
-        db.session.add(user)
+    
+    if password != confirm_password:
+        return "Passwords do not match"
+    elif password == confirm_password:
+        new_user = crud.create_user(email, password, first_name, last_name)
+        db.session.add(new_user)
         db.session.commit()
         flash("Account Creation Successful")
     return redirect(url_for("login"))
