@@ -11,15 +11,15 @@
     <div class="add-book-form">
     <form action="{{ url_for('add_book') }}" method="POST">
         {{ form.hidden_tag() }}
-        {{ form.title.label(class="form-label") }} {{ form.title }}
+        {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
         <br>
-        {{ form.author.label(class="form-label") }} {{ form.author }}
+        {{ form.author.label(class="form-label") }} {{ form.author(class="form-control") }}
         <br>
-        {{ form.pages.label(class="form-label") }} {{ form.pages }}
+        {{ form.pages.label(class="form-label") }} {{ form.pages(class="form-control") }}
         <br>
-        {{ form.overview.label(class="form-label") }} {{ form.overview }}
+        {{ form.overview.label(class="form-label") }} {{ form.overview(class="form-control") }}
         <br>
-        {{ form.submit }}
+        {{ form.submit(class="btn btn-primary") }}
     </form>
     </div>
 
@@ -28,8 +28,10 @@
     </div>
 
     {% for book in current_user.get_books() %}
-        <div>
+        <div class="books-not-currently-reading-img">
         <img class="book-cover-img" src="{{ book.cover_img }}"/>
+        </div>
+        <div class="books-not-currently-reading">
         <br>
         {{ book.title }}
         <br>
