@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- Display a single book with thoughts and progress bar -->
+
+<div class="all-books-header">
+    <h1>Your Books</h1>
+</div>
+
+<h2>Want To Read</h2>
+
+{% for book in current_user.get_books() %}
+    <div class="books-not-currently-reading-img">
+    <img class="book-cover-img" src="{{ book.cover_img }}"/>
+    </div>
+    <div class="books-not-currently-reading">
+    <br>
+    {{ book.title }}
+    <br>
+    {{ book.author }}
+    <br>
+    {{ book.pages }}
+    <br>
+    {{ book.overview }}
+    <br>
+    
+    </div>
+
+
+{% endfor %}
+
+<!-- same for loop as above with if statement regarding current or not? -->
+<h2>Currently Reading</h2>
+
+<div class="books-currently-reading-img">
+    <img class="book-cover-img" src="{{ book.cover_img }}"/>
+
+    <div class="books-currently-reading">
+        <br>
+        {{ book.title }}
+        <br>
+        {{ book.author }}
+        <br>
+        {{ book.pages }}
+        <br>
+        {{ book.overview }}
+        <br>
+        {{ book.pages_read }}
+        <br>
+        <!-- <div id="progress">
+            <div id="progress-bar">1%</div>
+        </div> -->
+
+        <!-- TODO add link to book_details page where update form will be -->
+</div>
+
+<!-- user_book "currently_reading"
+    user_book "pages_read" -->
+
+<!-- <div class="book-img">
+    <img class="book-cover-img" src="{{ book.cover_img }}"/>
+</div>
+
+<div class="book-title">
+    <h1>{{ book.title }}</h1>
+</div>
+
+<div class="book-author">
+    <h2>{{ book.author }}</h2>
+</div>
+
+<div class="book-pages">
+    <h4>{{ book.pages }}</h4>
+</div>
+
+<div class="book-overview">
+    <p>
+        {{ book.overview }}
+    </p>
+</div> -->
+
+
+<script>
+
+</script>
+{% endblock %}

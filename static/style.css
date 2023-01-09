@@ -2,6 +2,12 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
+
+
+.container-fluid {
+    background-color: lightgray;
+}
+
 .book-title {
     display: flex;
     justify-content: center;
@@ -88,7 +94,7 @@ font-size: large;}
 .add-book-header {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 300px;
 }
 
 .add-book-form {
@@ -101,8 +107,8 @@ font-size: large;}
     border: solid black 1px;
     border-radius: 15px;
     box-shadow: 2px 2px 2px black;
-    margin-top: 25px;
-    padding: 15px;
+    margin-top: 15px;
+    padding: 25px;
 }
 
 .all-books-header {
@@ -119,7 +125,6 @@ font-size: large;}
 
 .books-not-currently-reading {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     font-size: larger;
     padding: 10px;;

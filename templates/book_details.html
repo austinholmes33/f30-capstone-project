@@ -1,33 +1,4 @@
 {% extends 'base.html' %}
-{% block body %}
-<!-- Display a single book with thoughts and progress bar -->
 
-<div class="book-img">
-    <img class="book-cover-img" src="{{ book.cover_img }}"/>
-</div>
-
-<div class="book-title">
-    <h1>{{ book.title }}</h1>
-</div>
-
-<div class="book-author">
-    <h2>{{ book.author }}</h2>
-</div>
-
-<div class="book-pages">
-    <h4>{{ book.pages }}</h4>
-</div>
-
-<div class="book-overview">
-    <p>
-        {{ book.overview }}
-    </p>
-</div>
-
-<div id="progress">
-    <div id="progress-bar">1%</div>
-</div>
-<script>
-
-</script>
+{% block content %}
 {% endblock %}

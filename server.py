@@ -23,11 +23,11 @@ def homepage():
     form = AddBookForm()
     return render_template("home.html", form=form)
 
-@app.route("/book_details")
+@app.route("/all_books")
 @login_required
 def show_book():
     # book = Users_book(book_id)
-    return render_template("book_details.html")
+    return render_template("all_books.html")
 
 @app.route("/add_book", methods=["POST"])
 def add_book():

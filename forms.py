@@ -22,5 +22,10 @@ class AddBookForm(FlaskForm):
     overview = TextAreaField("Overview", validators=[Length(max=255)])
     submit = SubmitField()
 
-# SOME SORT OF UPDATE FORM FOR PAGES READ
-# TO BE USED ON BOOK_DETAILS PAGE
+# form on books page that allows user to update all book info
+# and also add whether or not they're currently reading
+# and their pages read and thoughts
+class UpdateBookForm(FlaskForm):
+    pass
+
+
