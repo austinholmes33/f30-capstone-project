@@ -20,7 +20,8 @@ def load_user(user_id):
 @app.route("/")
 @login_required
 def homepage():
-    return render_template("home.html")
+    form = AddBookForm()
+    return render_template("home.html", form=form)
 
 @app.route("/book_details")
 @login_required
