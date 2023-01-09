@@ -28,19 +28,6 @@ def homepage():
 def all_books():
     return render_template("all_books.html")
 
-@app.route("/book_details", methods=["POST"])
-@login_required
-def update_book():
-    form = UpdateBookForm()
-    title = form.title.data
-    author = form.author.data
-    pages = form.pages.data
-    overview = form.overview.data
-    pages_read = form.pages_read.data
-    currently_reading = form.currently_reading.data
-    # book = Users_book(book_id)
-    return render_template("book_details.html", form=form)
-
 @app.route("/add_book", methods=["POST"])
 def add_book():
     form = AddBookForm()
@@ -53,9 +40,33 @@ def add_book():
     try:
         db.session.add(new_book)
         db.session.commit()
+        flash('Book Successfully Added')
         return redirect(url_for("home"))
     except:
         print("Something went wrong")
+
+@app.route("/update_book", methods=["GET", "POST"])
+@login_required
+def update_book():
+    form = UpdateBookForm()
+
+    if request.method == "GET":
+        return render_template("update_book.html", form=form)
+        
+    title = form.title.data
+    author = form.author.data
+    pages = form.pages.data
+    overview = form.overview.data
+    pages_read = form.pages_read.data
+    currently_reading = form.currently_reading.data
+
+    # NEED to verify how this logic should look
+    if request.method == "POST" and form.validate():
+        updated_book = Users_book(current_user.id, title, author, pages, overview, pages_read, currently_reading)
+        db.session.add(updated_book)
+        db.session.commit()
+        flash("Book Successfully Updated")
+        return redirect(url_for('all_books'))
 
 @app.route("/create_user", methods=["GET", "POST"])
 def create_user():
