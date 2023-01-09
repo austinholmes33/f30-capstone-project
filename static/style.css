@@ -111,6 +111,13 @@ font-size: large;}
     padding: 25px;
 }
 
+.all-books-link {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    padding-top: 20px;
+}
+
 .all-books-header {
     display: flex;
     justify-content: center;
