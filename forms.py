@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, IntegerField, SubmitField, TextAreaField
+from wtforms import PasswordField, StringField, IntegerField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 
 class CreateUserForm(FlaskForm):
@@ -26,6 +26,12 @@ class AddBookForm(FlaskForm):
 # and also add whether or not they're currently reading
 # and their pages read and thoughts
 class UpdateBookForm(FlaskForm):
-    pass
+    title = StringField("Title", validators=[DataRequired(), Length(min=6, max=255)])
+    author = StringField("Author", validators=[DataRequired(), Length(min=6, max=255)])
+    pages = IntegerField("Pages", validators=[DataRequired(), Length(max=255)])
+    overview = TextAreaField("Overview", validators=[Length(max=255)])
+    pages_read = IntegerField("Pages Read", validators=[DataRequired(), Length(max=255)])
+    currently_reading = BooleanField("Currently Reading", validators=[DataRequired()])
+    submit = SubmitField()
 
 

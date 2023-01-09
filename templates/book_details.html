@@ -1,4 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<form action="{{ url_for('update_book') }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
+    <br>
+    {{ form.author.label(class="form-label") }} {{ form.author(class="form-control") }}
+    <br>
+    {{ form.pages.label(class="form-label") }} {{ form.pages(class="form-control") }}
+    <br>
+    {{ form.overview.label(class="form-label") }} {{ form.overview(class="form-control") }}
+    <br>
+    {{ form.pages_read.label(class="form-label") }} {{ form.pages_read(class="form-control") }}
+    <br>
+    {{ form.currently_reading.label(class="form-label") }} {{ form.currently_reading(class="form-control") }}
+    <br>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+</div>
+
+<div class="books-currently-reading-img">
+    <img class="book-cover-img" src="{{ book.cover_img }}"/>
+
+    <div class="books-currently-reading">
+        <br>
+        {{ book.title }}
+        <br>
+        {{ book.author }}
+        <br>
+        {{ book.pages }}
+        <br>
+        {{ book.overview }}
+        <br>
+        {{ book.pages_read }}
+        <br>
+
+</div>
 {% endblock %}

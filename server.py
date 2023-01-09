@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, redirect, flash, request, session
 from model import db, connect_to_db, User, Book, Users_book
-from forms import LoginForm, CreateUserForm, AddBookForm
+from forms import LoginForm, CreateUserForm, AddBookForm, UpdateBookForm
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 import jinja2
 import crud
@@ -25,9 +25,21 @@ def homepage():
 
 @app.route("/all_books")
 @login_required
-def show_book():
-    # book = Users_book(book_id)
+def all_books():
     return render_template("all_books.html")
+
+@app.route("/book_details", methods=["POST"])
+@login_required
+def update_book():
+    form = UpdateBookForm()
+    title = form.title.data
+    author = form.author.data
+    pages = form.pages.data
+    overview = form.overview.data
+    pages_read = form.pages_read.data
+    currently_reading = form.currently_reading.data
+    # book = Users_book(book_id)
+    return render_template("book_details.html", form=form)
 
 @app.route("/add_book", methods=["POST"])
 def add_book():
