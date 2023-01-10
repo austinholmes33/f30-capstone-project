@@ -22,7 +22,7 @@ class User(db.Model, UserMixin):
 
 # get_user_books() function associated with user
 
-    def get_books(self):
+    def get_all_books(self):
         return [book.book for book in self.users_books]
 
     def __repr__(self):
@@ -70,6 +70,9 @@ class Users_book(db.Model):
         self.currently_reading = currently_reading
 
 # get_book() gets book object from linking table
+
+    def get_book(self):
+        Book.query.filter_by(id=self.books_id).first()
 
     def __repr__(self):
         return f"Users_book id{self.id}"

@@ -20,7 +20,7 @@
 
 </div>
 
-<form action="{{ url_for('update_book') }}" method="POST">
+<form action="{{ url_for('update_book', book_id=book.id) }}" method="POST">
     {{ form.hidden_tag() }}
     {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
     <br>
