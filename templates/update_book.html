@@ -2,6 +2,24 @@
 
 {% block content %}
 
+<div class="books-currently-reading-img">
+    <img class="book-cover-img" src="{{ book.cover_img }}"/>
+
+    <div class="books-currently-reading">
+        <br>
+        {{ book.title }}
+        <br>
+        {{ book.author }}
+        <br>
+        {{ book.pages }}
+        <br>
+        {{ book.overview }}
+        <br>
+        {{ book.pages_read }}
+        <br>
+
+</div>
+
 <form action="{{ url_for('update_book') }}" method="POST">
     {{ form.hidden_tag() }}
     {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
@@ -20,21 +38,5 @@
 </form>
 </div>
 
-<div class="books-currently-reading-img">
-    <img class="book-cover-img" src="{{ book.cover_img }}"/>
 
-    <div class="books-currently-reading">
-        <br>
-        {{ book.title }}
-        <br>
-        {{ book.author }}
-        <br>
-        {{ book.pages }}
-        <br>
-        {{ book.overview }}
-        <br>
-        {{ book.pages_read }}
-        <br>
-
-</div>
 {% endblock %}

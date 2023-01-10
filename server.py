@@ -45,13 +45,13 @@ def add_book():
     except:
         print("Something went wrong")
 
-@app.route("/update_book", methods=["GET", "POST"])
+@app.route("/update_book/<book_id>", methods=["GET", "POST"])
 @login_required
-def update_book():
+def update_book(book_id):
     form = UpdateBookForm()
-
+    # book = Users_book(current_user.id, title, author, pages, overview, pages_read, currently_reading)
     if request.method == "GET":
-        return render_template("update_book.html", form=form)
+        return render_template("update_book.html", form=form, book_id=book_id)
         
     title = form.title.data
     author = form.author.data
