@@ -124,6 +124,11 @@ font-size: large;}
     margin-top: 100px;
 }
 
+/* .books-container {
+    display: flex;
+    justify-content: space-evenly;
+} */
+
 .books-not-currently-reading-img {
     display: flex;
     justify-content: center;
@@ -132,9 +137,8 @@ font-size: large;}
 
 .books-not-currently-reading {
     display: flex;
-    flex-wrap: wrap;
-    font-size: larger;
-    padding: 10px;;
+    justify-content: center;    font-size: larger;
+    padding: 10px;
 }
 
 .book-cover-img {
@@ -143,6 +147,47 @@ font-size: large;}
     border: solid black 2px;
 }
 
-nav.navbar.navbar-expand-lg.bg-light {
-    background-color: red;
+.want-to-read-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.currently-reading-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.books-currently-reading-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.books-currently-reading {
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    padding: 10px;
+}
+
+.update-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.update-form {
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: solid black 1px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px black;
+    margin-top: 15px;
+    padding: 25px;
 }

@@ -7,7 +7,11 @@ whether or not they are currently reading, and general book info -->
     <h1>Your Books</h1>
 </div>
 
-<h2>Want To Read</h2>
+<div class="books-container">
+
+<div class="want-to-read-header">
+    <h2>Want To Read</h2>
+</div>
 
 {% for book in current_user.users_books %}
     {% if not book.currently_reading %}
@@ -32,7 +36,9 @@ whether or not they are currently reading, and general book info -->
 
 {% endfor %}
 
-<h2>Currently Reading</h2>
+<div class="currently-reading-header">
+    <h2>Currently Reading</h2>
+</div>
 {% for book in current_user.users_books %}
     {% if book.currently_reading %}
         <div class="books-currently-reading-img">
@@ -60,4 +66,5 @@ whether or not they are currently reading, and general book info -->
 
 {% endfor %}
 
+</div>
 {% endblock %}
