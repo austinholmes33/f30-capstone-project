@@ -49,7 +49,7 @@ def add_book():
 @login_required
 def update_book(book_id):
     form = UpdateBookForm()
-    book = Book.query.filter_by(id=book_id).first()
+    book = Users_book.query.filter_by(id=book_id).first()
     if request.method == "GET":
         return render_template("update_book.html", form=form, book=book)
         

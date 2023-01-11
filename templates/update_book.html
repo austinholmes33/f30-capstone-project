@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block body %}
 
 <!-- NEED TO USE GET_BOOK HERE -->
 <div class="books-currently-reading-img">
-    <img class="book-cover-img" src="{{ book.cover_img }}"/>
+    <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
 
     <div class="books-currently-reading">
         <br>
-        {{ book.title }}
+        {{ book.book.title }}
         <br>
-        {{ book.author }}
+        {{ book.book.author }}
         <br>
-        {{ book.pages }}
+        {{ book.book.pages }}
         <br>
-        {{ book.overview }}
+        {{ book.book.overview }}
         <br>
         {{ book.pages_read }}
         <br>
+    </div>
 
 </div>
 

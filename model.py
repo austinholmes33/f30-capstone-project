@@ -69,11 +69,6 @@ class Users_book(db.Model):
         self.pages_read = pages_read
         self.currently_reading = currently_reading
 
-# get_book() gets book object from linking table
-
-    def get_book(self):
-        Book.query.filter_by(id=self.books_id).first()
-
     def __repr__(self):
         return f"Users_book id{self.id}"
 
