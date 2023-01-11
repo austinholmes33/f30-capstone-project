@@ -175,11 +175,11 @@ font-size: large;}
 .update-header {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .update-form {
-    width: 100%;
+    width: 100%; 
     max-width: 350px;
     margin-left: auto;
     margin-right: auto;
@@ -190,4 +190,5 @@ font-size: large;}
     box-shadow: 2px 2px 2px black;
     margin-top: 15px;
     padding: 25px;
+    margin-bottom: 25px;
 }
