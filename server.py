@@ -60,9 +60,8 @@ def update_book(book_id):
     pages_read = form.pages_read.data
     currently_reading = form.currently_reading.data
 
-    # NEED to verify how this logic should look
     if request.method == "POST" and form.validate():
-        updated_book = Users_book.query.filter_by(users_id=current_user.id, books_id=book_id).first()
+        updated_book = Users_book.query.filter_by(users_id=current_user.id, book_id=book_id).first()
         updated_book.pages_read = form.pages_read.data
         updated_book.currently_reading = form.currently_reading.data
         book.title = form.title.data
