@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, IntegerField, BooleanField, SubmitField, TextAreaField
-from wtforms.validators import DataRequired, Email, Length, EqualTo
+from wtforms.validators import DataRequired, Email, Length, EqualTo, NumberRange
 
 class CreateUserForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(), Email(), Length(min=6, max=255)])
@@ -18,7 +18,7 @@ class LoginForm(FlaskForm):
 class AddBookForm(FlaskForm):
     title = StringField("Title", validators=[DataRequired(), Length(min=6, max=255)])
     author = StringField("Author", validators=[DataRequired(), Length(min=6, max=255)])
-    pages = IntegerField("Pages", validators=[DataRequired(), Length(max=255)])
+    pages = IntegerField("Pages", validators=[DataRequired(), NumberRange(min=0, max=1000000)])
     overview = TextAreaField("Overview", validators=[Length(max=255)])
     cover_img = StringField("Cover Image", validators=[DataRequired()])
     submit = SubmitField()
@@ -29,9 +29,9 @@ class AddBookForm(FlaskForm):
 class UpdateBookForm(FlaskForm):
     title = StringField("Title", validators=[Length(min=6, max=255)])
     author = StringField("Author", validators=[Length(min=6, max=255)])
-    pages = IntegerField("Pages", validators=[Length(max=255)])
+    pages = IntegerField("Pages", validators=[NumberRange(min=0, max=1000000)])
     overview = TextAreaField("Overview", validators=[Length(max=255)])
-    pages_read = IntegerField("Pages Read", validators=[Length(max=255)])
+    pages_read = IntegerField("Pages Read", validators=[NumberRange(min=0, max=1000000)])
     currently_reading = BooleanField("Currently Reading", default=False)
     submit = SubmitField()
 

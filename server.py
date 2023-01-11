@@ -64,17 +64,17 @@ def update_book(book_id):
     form = UpdateBookForm()
     book = Users_book.query.filter_by(id=book_id).first()
     if request.method == "GET":
+        form.author.data = book.book.author
+        form.title.data = book.book.title
+        form.pages.data = book.book.pages
+        form.overview.data = book.book.overview
+        form.pages_read.data = book.pages_read
+        form.currently_reading.data = book.currently_reading
         return render_template("update_book.html", form=form, book=book)
-        
-    title = form.title.data
-    author = form.author.data
-    pages = form.pages.data
-    overview = form.overview.data
-    pages_read = form.pages_read.data
-    currently_reading = form.currently_reading.data
 
     if request.method == "POST" and form.validate():
-        updated_book = Users_book.query.filter_by(users_id=current_user.id, book_id=book_id).first()
+        print("IF STATEMENT WORKING--------------------------------------------------")
+        updated_book = Users_book.query.filter_by(users_id=current_user.id, books_id=book_id).first()
         updated_book.pages_read = form.pages_read.data
         updated_book.currently_reading = form.currently_reading.data
         book.title = form.title.data
