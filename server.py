@@ -35,14 +35,27 @@ def add_book():
     author = form.author.data
     pages = form.pages.data
     overview = form.overview.data
+    cover_img = form.cover_img.data
 
-    new_book = Book(current_user.id, title, author, pages, overview)
+    # def __init__(title, author, pages, overview, cover_img):
+    
     try:
-        db.session.add(new_book)
+        new_book = Book(title, author, pages, overview, cover_img)
+        """
+        new_book = Book(
+            title="The Road",
+            author="Cormac McCarthy",
+            ...
+        )
+        """
+        db.session.add(new_book) # where the primary key gets set for the book
+        new_users_book = Users_book(current_user.id, new_book.id)
+        db.session.add(new_users_book)
         db.session.commit()
         flash('Book Successfully Added')
-        return redirect(url_for("home"))
-    except:
+        return redirect(url_for("all_books"))
+    except Exception as e: # e is a variable holding the exception info
+        print(e)
         print("Something went wrong")
 
 @app.route("/update_book/<book_id>", methods=["GET", "POST"])

@@ -63,7 +63,7 @@ class Users_book(db.Model):
     user = db.relationship("User", backref="users_books", lazy=True)
 
 
-    def __init__(self, users_id, books_id, pages_read, currently_reading):
+    def __init__(self, users_id, books_id, pages_read=0, currently_reading=False):
         self.users_id = users_id
         self.books_id = books_id
         self.pages_read = pages_read

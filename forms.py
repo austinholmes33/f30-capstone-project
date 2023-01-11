@@ -20,6 +20,7 @@ class AddBookForm(FlaskForm):
     author = StringField("Author", validators=[DataRequired(), Length(min=6, max=255)])
     pages = IntegerField("Pages", validators=[DataRequired(), Length(max=255)])
     overview = TextAreaField("Overview", validators=[Length(max=255)])
+    cover_img = StringField("Cover Image", validators=[DataRequired()])
     submit = SubmitField()
 
 # form on books page that allows user to update all book info
