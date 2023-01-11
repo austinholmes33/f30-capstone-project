@@ -23,10 +23,10 @@ def homepage():
     form = AddBookForm()
     return render_template("home.html", form=form)
 
-@app.route("/all_books")
+@app.route("/your_books")
 @login_required
-def all_books():
-    return render_template("all_books.html")
+def your_books():
+    return render_template("your_books.html")
 
 @app.route("/add_book", methods=["POST"])
 def add_book():
@@ -53,7 +53,7 @@ def add_book():
         db.session.add(new_users_book)
         db.session.commit()
         flash('Book Successfully Added')
-        return redirect(url_for("all_books"))
+        return redirect(url_for("your_books"))
     except Exception as e: # e is a variable holding the exception info
         print(e)
         print("Something went wrong")
@@ -83,7 +83,7 @@ def update_book(book_id):
         book.overview = form.overview.data
         db.session.commit()
         flash("Book Successfully Updated")
-        return redirect(url_for('all_books'))
+        return redirect(url_for('your_books'))
 
 @app.route("/create_user", methods=["GET", "POST"])
 def create_user():
