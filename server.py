@@ -23,6 +23,7 @@ def homepage():
     form = AddBookForm()
     return render_template("home.html", form=form)
 
+# displays the users books that are being currently read and also currently not read
 @app.route("/your_books")
 @login_required
 def your_books():
@@ -41,13 +42,6 @@ def add_book():
     
     try:
         new_book = Book(title, author, pages, overview, cover_img)
-        """
-        new_book = Book(
-            title="The Road",
-            author="Cormac McCarthy",
-            ...
-        )
-        """
         db.session.add(new_book) # where the primary key gets set for the book
         new_users_book = Users_book(current_user.id, new_book.id)
         db.session.add(new_users_book)

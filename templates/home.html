@@ -2,6 +2,10 @@
 
 {% block body %}
 
+<div class="home-header">
+    <h1>Welcome to the Book Catalog! Please Add a Book Below</h1> 
+</div>
+
 <div class="add-book-header">
     <h2>Add a Book to Your Catalog</h2>
 </div>
@@ -22,7 +26,7 @@
     </form>
     </div>
 
-    <div class="all-books-link">
+    <div class="your-books-link">
         <a href="{{  url_for('your_books') }}">View All of Your Books</a>
     </div>
 

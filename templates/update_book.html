@@ -2,21 +2,29 @@
 
 {% block body %}
 
-<div class="books-currently-reading-img">
-    <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
-</div>
-    <div class="books-currently-reading">
-        <br>
+    <div class="books-currently-reading-img">
+        <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
+    </div>
+
+    <div class="books-currently-reading-title">
+        
         <p>Title: {{ book.book.title }}</p>
-        <br>
+    </div>
+    
+    <div class="books-currently-reading-author">
         <p>Author: {{ book.book.author }}</p>
-        <br>
+    </div>
+    
+        <div class="books-currently-reading-pages">
         <p>Page Count: {{ book.book.pages }}</p>
-        <br>
+    </div>
+    
+    <div class="books-currently-reading-overview">
         <p>Overview: {{ book.book.overview }}</p>
-        <br>
+    </div>
+
+    <div class="books-currently-reading-pages-read"> 
         <p>Pages Read: {{ book.pages_read }}</p>
-        <br>
     </div>
 
 <div class="update-header">

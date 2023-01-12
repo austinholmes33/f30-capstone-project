@@ -2,8 +2,6 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
-
-
 .container-fluid {
     background-color: lightgray;
 }
@@ -28,7 +26,9 @@ body {
     justify-content: center;
 }
 
-#progress {
+/* ############## PROGRESS BAR FUTURE FEATURE */
+
+/* #progress {
     width: 100%;
     background-color: black;
 }
@@ -40,14 +40,9 @@ body {
     text-align: center;
     line-height: 40px;
     color: white;
-}
+} */
 
-.register-link {
-    text-decoration: underline;
-}
-
-.register-link:hover {
-font-size: large;}
+/* ####### LOGIN PAGE AND FORM */
 
 .login-header {
     display: flex;
@@ -67,16 +62,25 @@ font-size: large;}
     border-radius: 15px;
     box-shadow: 2px 2px 2px black;
     padding: 15px;
-
 }
 
-.account-header {
+.register-link {
+    text-decoration: underline;
+}
+
+.register-link:hover {
+font-size: large;
+}
+
+/* ######### CREATE USER PAGE AND FORM */
+
+.create-user-header {
     display: flex;
     justify-content: center;
     margin-top: 300px;
 }
 
-.account-form {
+.create-user-form {
     width: 100%;
     max-width: 350px;
     margin-left: auto;
@@ -88,13 +92,20 @@ font-size: large;}
     box-shadow: 2px 2px 2px black;
     margin-top: 25px;
     padding: 15px;
+}
 
+/* ######## HOME PAGE WITH ADD BOOK FORM */
+
+.home-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
 }
 
 .add-book-header {
     display: flex;
     justify-content: center;
-    margin-top: 300px;
+    margin-top: 150px;
 }
 
 .add-book-form {
@@ -111,12 +122,14 @@ font-size: large;}
     padding: 25px;
 }
 
-.all-books-link {
+.your-books-link {
     display: flex;
     justify-content: center;
     font-size: larger;
     padding-top: 20px;
 }
+
+/* ######## Your Books Page With Currently Reading/Not Currently Reading Sections */
 
 .all-books-header {
     display: flex;
@@ -124,10 +137,11 @@ font-size: large;}
     margin-top: 100px;
 }
 
-/* .books-container {
+.want-to-read-header {
     display: flex;
-    justify-content: space-evenly;
-} */
+    justify-content: center;
+    margin-top: 100px;
+}
 
 .books-not-currently-reading-img {
     display: flex;
@@ -135,22 +149,46 @@ font-size: large;}
     margin-top: 25px;
 }
 
-.books-not-currently-reading {
+.books-not-currently-reading-title {
     display: flex;
-    justify-content: center;    font-size: larger;
-    padding: 10px;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+    padding-top: 10px;;
+}
+
+.books-not-currently-reading-author {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-not-currently-reading-pages {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-not-currently-reading-overview {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-not-currently-reading-update {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
 }
 
 .book-cover-img {
     width: 450px;
     height: 400px;
     border: solid black 2px;
-}
-
-.want-to-read-header {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
 }
 
 .currently-reading-header {
@@ -165,12 +203,50 @@ font-size: large;}
     margin-top: 25px;
 }
 
-.books-currently-reading {
+.books-currently-reading-title {
     display: flex;
     justify-content: center;
     font-size: larger;
-    padding: 10px;
+    padding: 5px;
+    padding-top: 10px;
 }
+
+.books-currently-reading-author {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-currently-reading-pages {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-currently-reading-overview {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-currently-reading-pages-read {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+.books-currently-reading-update {
+    display: flex;
+    justify-content: center;    
+    font-size: larger;
+    padding: 5px;
+}
+
+/* ###### UPDATE PAGE AND FORM */
 
 .update-header {
     display: flex;
