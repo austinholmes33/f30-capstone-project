@@ -28,7 +28,7 @@ whether or not they are currently reading, and general book info -->
         <br>
         {{ book.book.overview }}
         <br>
-        <a href="{{ url_for('update_book', book_id=book.id)  }}">Started this book? Update Here!</a>
+        <a href="{{ url_for('update_book', book_id=book.book.id)  }}">Started this book? Update Here!</a>
 
     </div>
 
@@ -47,17 +47,17 @@ whether or not they are currently reading, and general book info -->
 
     <div class="books-currently-reading">
         <br>
-        {{ book.book.title }}
+        <p>Title: {{ book.book.title }}</p>
         <br>
-        {{ book.book.author }}
+        <p>Author: {{ book.book.author }}</p>
         <br>
-        {{ book.book.pages }}
+        <p>Page Count: {{ book.book.pages }}</p>
         <br>
-        {{ book.book.overview }}
+        <p>Overview: {{ book.book.overview }}</p>
         <br>
-        {{ book.pages_read }}
+        <p>Pages Read: {{ book.pages_read }}</p>
         <br>
-        <a href="{{ url_for('update_book', book_id=book.id) }}">Made Some Progress? Update Here!</a>
+        <a href="{{ url_for('update_book', book_id=book.book.id) }}">Made Some Progress? Update Here!</a>
         <!-- <div id="progress">
         <div id="progress-bar">1%</div>
         </div> -->

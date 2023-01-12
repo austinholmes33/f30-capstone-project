@@ -7,15 +7,15 @@
 </div>
     <div class="books-currently-reading">
         <br>
-        {{ book.book.title }}
+        <p>Title: {{ book.book.title }}</p>
         <br>
-        {{ book.book.author }}
+        <p>Author: {{ book.book.author }}</p>
         <br>
-        {{ book.book.pages }}
+        <p>Page Count: {{ book.book.pages }}</p>
         <br>
-        {{ book.book.overview }}
+        <p>Overview: {{ book.book.overview }}</p>
         <br>
-        {{ book.pages_read }}
+        <p>Pages Read: {{ book.pages_read }}</p>
         <br>
     </div>
 
@@ -24,7 +24,7 @@
 </div>
 
 <div class="update-form">
-    <form action="{{ url_for('update_book', book_id=book.id) }}" method="POST">
+    <form action="{{ url_for('update_book', book_id=book.book.id) }}" method="POST">
         {{ form.hidden_tag() }}
         {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
         <br>
@@ -33,6 +33,8 @@
         {{ form.pages.label(class="form-label") }} {{ form.pages(class="form-control") }}
         <br>
         {{ form.overview.label(class="form-label") }} {{ form.overview(class="form-control") }}
+        <br>
+        {{ form.cover_img.label(class="form-label") }} {{ form.cover_img(class="form-control") }}
         <br>
         {{ form.pages_read.label(class="form-label") }} {{ form.pages_read(class="form-control") }}
         <br>

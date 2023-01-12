@@ -62,25 +62,29 @@ def add_book():
 @login_required
 def update_book(book_id):
     form = UpdateBookForm()
-    book = Users_book.query.filter_by(id=book_id).first()
+    book = Users_book.query.filter_by(users_id=current_user.id, books_id=book_id).first()
     if request.method == "GET":
         form.author.data = book.book.author
         form.title.data = book.book.title
         form.pages.data = book.book.pages
         form.overview.data = book.book.overview
+        form.cover_img.data = book.book.cover_img
         form.pages_read.data = book.pages_read
         form.currently_reading.data = book.currently_reading
         return render_template("update_book.html", form=form, book=book)
 
     if request.method == "POST" and form.validate():
         print("IF STATEMENT WORKING--------------------------------------------------")
+        print(current_user.id)
+        print(book_id)
         updated_book = Users_book.query.filter_by(users_id=current_user.id, books_id=book_id).first()
         updated_book.pages_read = form.pages_read.data
         updated_book.currently_reading = form.currently_reading.data
-        book.title = form.title.data
-        book.author = form.author.data
-        book.pages = form.pages.data
-        book.overview = form.overview.data
+        updated_book.book.title = form.title.data
+        updated_book.book.author = form.author.data
+        updated_book.book.pages = form.pages.data
+        updated_book.book.overview = form.overview.data
+        updated_book.book.cover_img = form.cover_img.data
         db.session.commit()
         flash("Book Successfully Updated")
         return redirect(url_for('your_books'))
