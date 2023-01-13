@@ -140,36 +140,37 @@ font-size: large;
 .books-not-currently-reading-title {
     display: flex;
     justify-content: center;    
-    font-size: larger;
     padding: 5px;
     padding-top: 10px;;
+    font-size: 1.3em;
 }
 
 .books-not-currently-reading-author {
     display: flex;
     justify-content: center;    
-    font-size: larger;
     padding: 5px;
+    font-size: 1.3em;
+
 }
 
 .books-not-currently-reading-pages {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
 }
 
 .books-not-currently-reading-overview {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
 }
 
 .books-not-currently-reading-update {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
     border: solid 1px black;
 }
@@ -195,7 +196,7 @@ font-size: large;
 .books-currently-reading-title {
     display: flex;
     justify-content: center;
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
     padding-top: 10px;
 }
@@ -203,35 +204,35 @@ font-size: large;
 .books-currently-reading-author {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
 }
 
 .books-currently-reading-pages {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
 }
 
 .books-currently-reading-overview {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
 }
 
 .books-currently-reading-pages-read {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
 }
 
 .books-currently-reading-update {
     display: flex;
     justify-content: center;    
-    font-size: larger;
+    font-size: 1.3em;
     padding: 5px;
     border: solid 1px black;
 
