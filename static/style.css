@@ -171,6 +171,7 @@ font-size: large;
     justify-content: center;    
     font-size: larger;
     padding: 5px;
+    border: solid 1px black;
 }
 
 .book-cover-img {
@@ -232,6 +233,8 @@ font-size: large;
     justify-content: center;    
     font-size: larger;
     padding: 5px;
+    border: solid 1px black;
+
 }
 
 /* ###### UPDATE PAGE AND FORM */
