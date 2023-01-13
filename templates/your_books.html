@@ -1,106 +1,112 @@
 {% extends 'base.html' %}
 {% block body %}
+
 <!-- Display a single book where the user can update pages read,
 whether or not they are currently reading, and general book info -->
 
 <div class="all-books-header">
     <h1>Your Books</h1>
 </div>
-
-<div class="want-to-read-header">
-    <h2>Want To Read</h2>
-</div>
-
-{% for book in current_user.users_books %}
-    {% if not book.currently_reading %}
-
-    <div class="books-not-currently-reading-img">
-        <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
-    </div>
-
-    <div class="books-not-currently-reading-title">
-        <p>Title: {{ book.book.title }}</p>
-    </div>
-
-
-
-    <div class="books-not-currently-reading-author">
-        <p>Author: {{ book.book.author }}</p>
-    </div>
-
-
-
-    <div class="books-not-currently-reading-pages">
-        <p>Page Count: {{ book.book.pages }}</p>
-    </div>
-
-
-
-    <div class="books-not-currently-reading-overview">
-        <p>Overview: {{ book.book.overview }}</p>
-    </div>
-
-
-    <div class="books-not-currently-reading-update">
-        <a href="{{ url_for('update_book', book_id=book.book.id)  }}">Started this book? Update Here!</a>
-    </div>
-
-{% endif %}
-
-{% endfor %}
-
-<div class="currently-reading-header">
-    <h2>Currently Reading</h2>
-</div>
-
-{% for book in current_user.users_books %}
-    {% if book.currently_reading %}
-
-        <div class="books-currently-reading-img">
-            <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
+<div class="grid-container">
+    <div class="column-1">
+        <div class="want-to-read-header">
+            <h2>Want To Read</h2>
         </div>
 
-    <div class="books-currently-reading-title">
-        
-        <p>Title: {{ book.book.title }}</p>
+        {% for book in current_user.users_books %}
+            {% if not book.currently_reading %}
+
+                <div class="books-not-currently-reading-img">
+                    <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
+                </div>
+
+                <div class="books-not-currently-reading-title">
+                    <p>Title: {{ book.book.title }}</p>
+                </div>
+
+
+
+                <div class="books-not-currently-reading-author">
+                    <p>Author: {{ book.book.author }}</p>
+                </div>
+
+
+
+                <div class="books-not-currently-reading-pages">
+                    <p>Page Count: {{ book.book.pages }}</p>
+                </div>
+
+
+
+                <div class="books-not-currently-reading-overview">
+                    <p>Overview: {{ book.book.overview }}</p>
+                </div>
+
+
+                <div class="books-not-currently-reading-update">
+                    <a href="{{ url_for('update_book', book_id=book.book.id)  }}">Started this book? Update Here!</a>
+                </div>
+            {% endif %}
+
+        {% endfor %}
 
     </div>
 
-    <div class="books-currently-reading-author">
-        
-        <p>Author: {{ book.book.author }}</p>
+    <div class="column-2">
 
-    </div>
+        <div class="currently-reading-header">
+            <h2>Currently Reading</h2>
+        </div>
 
-    <div class="books-currently-reading-pages">
-        
-        <p>Page Count: {{ book.book.pages }}</p>
+        {% for book in current_user.users_books %}
+            {% if book.currently_reading %}
 
-    </div>
-        
-    <div class="books-currently-reading-overview">
+            <div class="books-currently-reading-img">
+                <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
+            </div>
 
-        <p>Overview: {{ book.book.overview }}</p>
+            <div class="books-currently-reading-title">
+                
+                <p>Title: {{ book.book.title }}</p>
 
-    </div>
-        
-    <div class="books-currently-reading-pages-read">
+            </div>
 
-        <p>Pages Read: {{ book.pages_read }}</p>
+            <div class="books-currently-reading-author">
+                
+                <p>Author: {{ book.book.author }}</p>
 
-    </div>
+            </div>
 
-    <div class="books-currently-reading-update">
-        
-        <a href="{{ url_for('update_book', book_id=book.book.id) }}">Made Some Progress? Update Here!</a>
+            <div class="books-currently-reading-pages">
+                
+                <p>Page Count: {{ book.book.pages }}</p>
 
-    </div>
+            </div>
+                
+            <div class="books-currently-reading-overview">
+
+                <p>Overview: {{ book.book.overview }}</p>
+
+            </div>
+                
+            <div class="books-currently-reading-pages-read">
+
+                <p>Pages Read: {{ book.pages_read }}</p>
+
+            </div>
+
+            <div class="books-currently-reading-update">
+                
+                <a href="{{ url_for('update_book', book_id=book.book.id) }}">Made Some Progress? Update Here!</a>
+
+            </div>
 
         <!-- <div id="progress">
         <div id="progress-bar">1%</div>
         </div> -->
-{% endif %}
+            {% endif %}
 
-{% endfor %}
-
+            {% endfor %}
+    </div>
+</div>
 {% endblock %}

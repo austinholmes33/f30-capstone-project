@@ -1,59 +1,29 @@
 body {
     font-family: 'PT Sans', sans-serif;
     /* background-color: #63717f; */
+    background-image: url("https://wallpaperaccess.com/full/4868955.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-/* .container-fluid {
-    background-color: lightgray;
-} */
-
-.book-title {
-    display: flex;
-    justify-content: center;
-}
-
-.book-author {
-    display: flex;
-    justify-content: center;
-}
-
-.book-pages {
-    display: flex;
-    justify-content: center;
-}
-
-.book-overview {
-    display: flex;
-    justify-content: center;
-}
-
-/* ############## PROGRESS BAR FUTURE FEATURE */
-
-/* #progress {
+.header-img {
+    height: 250px;
     width: 100%;
-    background-color: black;
+    object-fit: cover;
 }
-
-#progress-bar {
-    width: 1%;
-    height: 40px;
-    background-color: orange;
-    text-align: center;
-    line-height: 40px;
-    color: white;
-} */
 
 /* ####### LOGIN PAGE AND FORM */
 
 .login-header {
     display: flex;
     justify-content: center;
-    margin-top: 400px;
+    margin-top: 200px;
 }
 
 .login-form {
     width: 100%;
     max-width: 350px;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -84,6 +54,7 @@ font-size: large;
 .create-user-form {
     width: 100%;
     max-width: 350px;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -112,6 +83,7 @@ font-size: large;
 .add-book-form {
     width: 100%;
     max-width: 350px;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -136,6 +108,20 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 100px;
+}
+
+.grid-container {
+    display: inline-grid;
+    gap: 550px;
+}
+
+.column-1 {
+    grid-column-start: 1;
+    margin-left: 550px;
+}
+
+.column-2 {
+    grid-column-start: 2;
 }
 
 .want-to-read-header {
@@ -258,6 +244,7 @@ font-size: large;
 .update-form {
     width: 100%; 
     max-width: 350px;
+    background-color: white;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -269,3 +256,19 @@ font-size: large;
     padding: 25px;
     margin-bottom: 25px;
 }
+
+/* ############## PROGRESS BAR FUTURE FEATURE */
+
+/* #progress {
+    width: 100%;
+    background-color: black;
+}
+
+#progress-bar {
+    width: 1%;
+    height: 40px;
+    background-color: orange;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+} */
