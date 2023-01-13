@@ -115,12 +115,13 @@ font-size: large;
 
 .grid-container {
     display: inline-grid;
+    grid-template-columns: 500px 500px;
     gap: 550px;
+    margin-left: 500px;
 }
 
 .column-1 {
     grid-column-start: 1;
-    margin-left: 550px;
 }
 
 .column-2 {
