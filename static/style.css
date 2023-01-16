@@ -38,6 +38,7 @@ body {
 
 .register-link {
     text-decoration: underline;
+    padding-top: 5px;
 }
 
 .register-link:hover {
@@ -132,20 +133,24 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    text-decoration: underline;
 }
 
 .books-not-currently-reading-img {
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    padding-bottom: 10px;
 }
 
 .books-not-currently-reading-title {
     display: flex;
     justify-content: center;    
     padding: 5px;
-    padding-top: 10px;;
+    padding-top: 10px;
     font-size: 1.3em;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-not-currently-reading-author {
@@ -153,7 +158,8 @@ font-size: large;
     justify-content: center;    
     padding: 5px;
     font-size: 1.3em;
-
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-not-currently-reading-pages {
@@ -161,6 +167,8 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-not-currently-reading-overview {
@@ -168,7 +176,9 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-}
+    text-align: center;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);}
 
 .books-not-currently-reading-update {
     display: flex;
@@ -187,12 +197,15 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    text-decoration: underline;
 }
 
 .books-currently-reading-img {
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    padding-bottom: 10px;
+
 }
 
 .books-currently-reading-title {
@@ -201,6 +214,8 @@ font-size: large;
     font-size: 1.3em;
     padding: 5px;
     padding-top: 10px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-currently-reading-author {
@@ -208,28 +223,33 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-}
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);}
 
 .books-currently-reading-pages {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-}
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);}
 
 .books-currently-reading-overview {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-}
+    text-align: center;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);}
 
 .books-currently-reading-pages-read {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-}
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);}
 
 .books-currently-reading-update {
     display: flex;
@@ -237,6 +257,72 @@ font-size: large;
     font-size: 1.3em;
     padding: 5px;
 
+}
+
+
+.update-books-currently-reading-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-bottom: 10px;
+
+}
+
+.update-books-currently-reading-title {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+    padding: 5px;
+    padding-top: 10px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    margin-left: 1000px;
+    margin-right: 1000px;
+}
+
+.update-books-currently-reading-author {
+    display: flex;
+    justify-content: center;    
+    font-size: 1.3em;
+    padding: 5px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    margin-left: 1000px;
+    margin-right: 1000px;
+}
+
+.update-books-currently-reading-pages {
+    display: flex;
+    justify-content: center;    
+    font-size: 1.3em;
+    padding: 5px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    margin-left: 1000px;
+    margin-right: 1000px;
+}
+
+.update-books-currently-reading-overview {
+    display: flex;
+    justify-content: center;    
+    font-size: 1.3em;
+    padding: 5px;
+    text-align: center;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    margin-left: 1000px;
+    margin-right: 1000px;
+}
+
+.update-books-currently-reading-pages-read {
+    display: flex;
+    justify-content: center;    
+    font-size: 1.3em;
+    padding: 5px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    margin-left: 1000px;
+    margin-right: 1000px;
 }
 
 /* ###### UPDATE PAGE AND FORM */
