@@ -1,9 +1,11 @@
 body {
     font-family: 'PT Sans', sans-serif;
     /* background-color: #63717f; */
-    background-image: url("https://wallpaperaccess.com/full/4868955.jpg");
-    background-size: cover;
-    background-position: center;
+    /* background-image: url("https://wallpaperaccess.com/full/4868955.jpg"); */
+    /* background-size: cover;
+    background-position: center; */
+    background: linear-gradient(#878d93 5%, 30%, #E4E6C3 95%);
+
 }
 
 .header-img {
@@ -140,33 +142,35 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 25px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .books-not-currently-reading-title {
     display: flex;
     justify-content: center;    
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
     font-size: 1.3em;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+
 }
 
 .books-not-currently-reading-author {
     display: flex;
     justify-content: center;    
-    padding: 5px;
+    padding: 10px;
     font-size: 1.3em;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+
 }
 
 .books-not-currently-reading-pages {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
@@ -175,10 +179,12 @@ font-size: large;
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);}
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+
+}
 
 .books-not-currently-reading-update {
     display: flex;
@@ -204,7 +210,7 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 25px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 
 }
 
@@ -212,23 +218,19 @@ font-size: large;
     display: flex;
     justify-content: center;
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     padding-top: 10px;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    border-radius: 7%;
 }
 
 .books-currently-reading-author {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    border-radius: 7%;
 
 }
 
@@ -236,11 +238,9 @@ font-size: large;
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    border-radius: 7%;
 
 }
 
@@ -248,25 +248,19 @@ font-size: large;
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    border-radius: 7%;
-
 }
 
 .books-currently-reading-pages-read {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding: 10px;
     border: solid 1px black;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    border-radius: 7%;
-
 }
 
 .books-currently-reading-update {
@@ -282,7 +276,7 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 25px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 
 }
 
@@ -296,6 +290,7 @@ font-size: large;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
     margin-left: 1000px;
     margin-right: 1000px;
+
 }
 
 .update-books-currently-reading-author {
@@ -307,6 +302,7 @@ font-size: large;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
     margin-left: 1000px;
     margin-right: 1000px;
+
 }
 
 .update-books-currently-reading-pages {
@@ -318,6 +314,7 @@ font-size: large;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
     margin-left: 1000px;
     margin-right: 1000px;
+
 }
 
 .update-books-currently-reading-overview {
@@ -330,6 +327,7 @@ font-size: large;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
     margin-left: 1000px;
     margin-right: 1000px;
+
 }
 
 .update-books-currently-reading-pages-read {
@@ -341,6 +339,7 @@ font-size: large;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
     margin-left: 1000px;
     margin-right: 1000px;
+
 }
 
 /* ###### UPDATE PAGE AND FORM */
