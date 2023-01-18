@@ -4,7 +4,7 @@ body {
     /* background-image: url("https://wallpaperaccess.com/full/4868955.jpg"); */
     /* background-size: cover;
     background-position: center; */
-    background: linear-gradient(#878d93 10%, 60%, #E4E6C3 95%);
+    /* background: linear-gradient(#E4E6C3 10%, 60%, white 95%); */
 }
 
 html {
@@ -15,7 +15,6 @@ html {
     height: 350px;
     width: 100%;
     object-fit: cover;
-
 }
 
 /* ####### LOGIN PAGE AND FORM */
@@ -138,7 +137,6 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 100px;
-    text-decoration: underline;
 }
 
 .books-not-currently-reading-img {
@@ -146,26 +144,21 @@ font-size: large;
     justify-content: center;
     margin-top: 25px;
     padding-bottom: 20px;
+    padding-top: 50px;
 }
 
 .books-not-currently-reading-title {
     display: flex;
     justify-content: center;    
-    padding: 10px;
-    padding-top: 10px;
-    font-size: 1.3em;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-
+    padding-top: 20px;
+    font-size: 1.7em;
+    font-weight: bold;
 }
 
 .books-not-currently-reading-author {
     display: flex;
     justify-content: center;    
-    padding: 10px;
     font-size: 1.3em;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -173,31 +166,26 @@ font-size: large;
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 10px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-not-currently-reading-overview {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 10px;
     text-align: center;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .books-not-currently-reading-update {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding-bottom: 20px;
 }
 
 .book-cover-img {
-    width: 450px;
+    width: 325px;
     height: 400px;
     border: solid black 2px;
 }
@@ -206,7 +194,6 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 100px;
-    text-decoration: underline;
 }
 
 .books-currently-reading-img {
@@ -214,26 +201,22 @@ font-size: large;
     justify-content: center;
     margin-top: 25px;
     padding-bottom: 20px;
+    padding-top: 50px;
 
 }
 
 .books-currently-reading-title {
     display: flex;
     justify-content: center;
-    font-size: 1.3em;
-    padding: 10px;
-    padding-top: 10px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+    font-size: 1.7em;
+    font-weight: bold;    
+    padding-top: 20px;
 }
 
 .books-currently-reading-author {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 10px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -241,9 +224,6 @@ font-size: large;
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 10px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 
 }
 
@@ -251,10 +231,9 @@ font-size: large;
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-currently-reading-pages-read {
@@ -262,15 +241,13 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 10px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
 }
 
 .books-currently-reading-update {
     display: flex;
     justify-content: center;    
     font-size: 1.3em;
-    padding: 5px;
+    padding-bottom: 20px;
 
 }
 
@@ -286,13 +263,12 @@ font-size: large;
 .update-books-currently-reading-title {
     display: flex;
     justify-content: center;
-    font-size: 1.3em;
+    font-size: 1.7em;
+    font-weight: bold;
     padding: 5px;
-    padding-top: 10px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    margin-left: 1000px;
-    margin-right: 1000px;
+    padding-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
@@ -301,10 +277,8 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    margin-left: 1000px;
-    margin-right: 1000px;
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
@@ -313,10 +287,8 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    margin-left: 1000px;
-    margin-right: 1000px;
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
@@ -326,10 +298,8 @@ font-size: large;
     font-size: 1.3em;
     padding: 5px;
     text-align: center;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    margin-left: 1000px;
-    margin-right: 1000px;
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
@@ -338,10 +308,8 @@ font-size: large;
     justify-content: center;    
     font-size: 1.3em;
     padding: 5px;
-    border: solid 1px black;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-    margin-left: 1000px;
-    margin-right: 1000px;
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
@@ -367,6 +335,30 @@ font-size: large;
     margin-top: 15px;
     padding: 25px;
     margin-bottom: 25px;
+}
+
+.book-info-container {
+    background-color: #e7e7e7;
+    border-radius: 15px;
+    width: 18%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.currently-reading-book-info-container {
+    background-color: #e7e7e7;
+    border-radius: 15px;
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.not-currently-reading-book-info-container {
+    background-color: #e7e7e7;
+    border-radius: 15px;
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ############## PROGRESS BAR FUTURE FEATURE */

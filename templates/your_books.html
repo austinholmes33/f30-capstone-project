@@ -20,8 +20,9 @@ whether or not they are currently reading, and general book info -->
                     <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
                 </div>
 
+                <div class="not-currently-reading-book-info-container">
                 <div class="books-not-currently-reading-title">
-                    <p>Title: {{ book.book.title }}</p>
+                    <p>{{ book.book.title }}</p>
                 </div>
 
 
@@ -46,6 +47,7 @@ whether or not they are currently reading, and general book info -->
                 <div class="books-not-currently-reading-update">
                     <a href="{{ url_for('update_book', book_id=book.book.id)  }}">Started this book? Update Here!</a>
                 </div>
+                </div>
             {% endif %}
 
         {% endfor %}
@@ -64,10 +66,10 @@ whether or not they are currently reading, and general book info -->
             <div class="books-currently-reading-img">
                 <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
             </div>
-
+            <div class="currently-reading-book-info-container">
             <div class="books-currently-reading-title">
                 
-                <p>Title: {{ book.book.title }}</p>
+                <p>{{ book.book.title }}</p>
 
             </div>
 
@@ -76,16 +78,16 @@ whether or not they are currently reading, and general book info -->
                 <p>Author: {{ book.book.author }}</p>
 
             </div>
-
-            <div class="books-currently-reading-pages">
-                
-                <p>Page Count: {{ book.book.pages }}</p>
-
-            </div>
                 
             <div class="books-currently-reading-overview">
 
                 <p>Overview: {{ book.book.overview }}</p>
+
+            </div>
+
+            <div class="books-currently-reading-pages">
+                
+                <p>Page Count: {{ book.book.pages }}</p>
 
             </div>
                 
@@ -99,6 +101,7 @@ whether or not they are currently reading, and general book info -->
                 
                 <a href="{{ url_for('update_book', book_id=book.book.id) }}">Made Some Progress? Update Here!</a>
 
+            </div>
             </div>
 
         <!-- <div id="progress">
