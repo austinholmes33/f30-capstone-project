@@ -17,6 +17,8 @@ html {
     object-fit: cover;
 }
 
+
+
 /* ####### LOGIN PAGE AND FORM */
 
 .login-header {
@@ -115,7 +117,8 @@ font-size: large;
     display: flex;
     justify-content: center;
     margin-top: 75px;
-    border: solid black 2px;
+    font-size: 2.5em;
+    font-weight:900;
 }
 
 .grid-container {
@@ -315,18 +318,24 @@ font-size: large;
 
 /* ###### UPDATE PAGE AND FORM */
 
-.update-header {
+.update-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+/* .update-header {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-}
+} */
 
 .update-form {
     width: 100%; 
-    max-width: 350px;
+    max-width: 450px;
     background-color: white;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
     display: flex;
     justify-content: center;
     border: solid black 1px;
@@ -340,9 +349,12 @@ font-size: large;
 .book-info-container {
     background-color: #e7e7e7;
     border-radius: 15px;
-    width: 18%; 
-    margin-left: auto;
-    margin-right: auto;
+    width: 450px; 
+    padding: 25px;
+    margin-top: 15px;
+
+    margin-bottom: 25px;
+
 }
 
 .currently-reading-book-info-container {
