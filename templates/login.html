@@ -7,16 +7,16 @@
     <h2>Log In</h2>
 </div>
     <div class="login-form">
-    <form action="{{ url_for('login') }}" method="POST">
-        {{ form.hidden_tag() }}
-        {{ form.email.label(class="form-label") }} {{ form.email(class="form-control") }}
-        <br>
-        {{ form.password.label(class="form-label") }} {{ form.password(class="form-control") }}
-        <br>
-        {{ form.submit(class="btn btn-primary") }}
-        <br>
-        <a class="register-link" href="{{ url_for('create_user') }}">Register</a>
-    </form>
+        <form action="{{ url_for('login') }}" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.email.label(class="form-label") }} {{ form.email(class="form-control") }}
+            <br>
+            {{ form.password.label(class="form-label") }} {{ form.password(class="form-control") }}
+            <br>
+            {{ form.submit(class="btn btn-primary") }}
+            <br>
+            <a class="register-link" href="{{ url_for('create_user') }}">Register</a>
+        </form>
     </div>
 
 {% endblock %}

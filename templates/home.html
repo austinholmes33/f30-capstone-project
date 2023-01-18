@@ -3,27 +3,27 @@
 {% block body %}
 
 <div class="home-header">
-    <h1>Welcome to the Book Catalog! Please Add a Book Below</h1> 
+    <h1>Welcome to the MyRead!</h1> 
 </div>
 
 <div class="add-book-header">
     <h2>Add a Book to Your Catalog</h2>
 </div>
     <div class="add-book-form">
-    <form action="{{ url_for('add_book') }}" method="POST">
-        {{ form.hidden_tag() }}
-        {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
-        <br>
-        {{ form.author.label(class="form-label") }} {{ form.author(class="form-control") }}
-        <br>
-        {{ form.pages.label(class="form-label") }} {{ form.pages(class="form-control") }}
-        <br>
-        {{ form.overview.label(class="form-label") }} {{ form.overview(class="form-control") }}
-        <br>
-        {{ form.cover_img.label(class="form-label") }} {{ form.cover_img(class="form-control") }}
-        <br>
-        {{ form.submit(class="btn btn-primary") }}
-    </form>
+        <form action="{{ url_for('add_book') }}" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.title.label(class="form-label") }} {{ form.title(class="form-control") }}
+            <br>
+            {{ form.author.label(class="form-label") }} {{ form.author(class="form-control") }}
+            <br>
+            {{ form.pages.label(class="form-label") }} {{ form.pages(class="form-control") }}
+            <br>
+            {{ form.overview.label(class="form-label") }} {{ form.overview(class="form-control") }}
+            <br>
+            {{ form.cover_img.label(class="form-label") }} {{ form.cover_img(class="form-control") }}
+            <br>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
     </div>
 
     <div class="your-books-link">

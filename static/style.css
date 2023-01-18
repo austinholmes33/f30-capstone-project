@@ -4,8 +4,11 @@ body {
     /* background-image: url("https://wallpaperaccess.com/full/4868955.jpg"); */
     /* background-size: cover;
     background-position: center; */
-    background: linear-gradient(#878d93 5%, 30%, #E4E6C3 95%);
+    background: linear-gradient(#878d93 10%, 60%, #E4E6C3 95%);
+}
 
+html {
+    min-height: 100%;
 }
 
 .header-img {
