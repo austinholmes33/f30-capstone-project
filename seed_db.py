@@ -36,10 +36,15 @@ model.db.session.commit()
 
 user_book1 = Users_book(1, 1, 25, True)
 user_book2 = Users_book(1, 2, 57, True)
-user_book3 = Users_book(1, 3, 12, False)
+user_book3 = Users_book(1, 3, 0, False)
+user_book4 = Users_book(1, 4, 0, False)
+user_book5 = Users_book(1, 5, 0, False)
+user_book6 = Users_book(1, 6, 0, False)
+user_book7 = Users_book(1, 7, 11, True)
+user_book8 = Users_book(1, 8, 0, False)
 
 
-model.db.session.add_all([user_book1, user_book2, user_book3])
+model.db.session.add_all([user_book1, user_book2, user_book3, user_book4, user_book5, user_book6, user_book7, user_book8])
 model.db.session.commit()
 
 # for x in range(10):
