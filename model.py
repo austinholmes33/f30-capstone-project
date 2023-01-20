@@ -64,11 +64,12 @@ class Users_book(db.Model):
     user = db.relationship("User", backref="users_books", lazy=True)
 
 
-    def __init__(self, users_id, books_id, pages_read=0, currently_reading=False):
+    def __init__(self, users_id, books_id, pages_read=0, currently_reading=False, completed=False):
         self.users_id = users_id
         self.books_id = books_id
         self.pages_read = pages_read
         self.currently_reading = currently_reading
+        self.completed = completed
 
     def __repr__(self):
         return f"Users_book id{self.id}"

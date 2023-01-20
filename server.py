@@ -70,6 +70,7 @@ def update_book(book_id):
         form.cover_img.data = book.book.cover_img
         form.pages_read.data = book.pages_read
         form.currently_reading.data = book.currently_reading
+        form.completed.data = book.completed
         return render_template("update_book.html", form=form, book=book)
 
     if request.method == "POST" and form.validate():
@@ -79,6 +80,7 @@ def update_book(book_id):
         updated_book = Users_book.query.filter_by(users_id=current_user.id, books_id=book_id).first()
         updated_book.pages_read = form.pages_read.data
         updated_book.currently_reading = form.currently_reading.data
+        updated_book.completed = form.completed.data
         updated_book.book.title = form.title.data
         updated_book.book.author = form.author.data
         updated_book.book.pages = form.pages.data
