@@ -39,6 +39,7 @@ class UpdateBookForm(FlaskForm):
     cover_img = StringField("Cover Image")
     pages_read = IntegerField("Pages Read", validators=[NumberRange(min=0, max=1000000)])
     currently_reading = BooleanField("Currently Reading", default=False)
+    completed = BooleanField("Completed", default=False)
     submit = SubmitField()
 
 

@@ -29,6 +29,11 @@ def homepage():
 def your_books():
     return render_template("your_books.html")
 
+@app.route("/completed_books")
+@login_required
+def completed_books():
+    return render_template("completed_books.html")
+
 @app.route("/add_book", methods=["POST"])
 def add_book():
     form = AddBookForm()

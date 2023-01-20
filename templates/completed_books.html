@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="completed-books-header">
+        <p>Completed Books</p>
+    </div>
+
+    {% for book in current_user.users_books %}
+        {% if book.completed %}
+
+        <div class="books-completed-img">
+            <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
+        </div>
+
+        <div class="completed-book-info-container">
+            
+            <div class="completed-book-title">
+                <p>{{ book.book.title }}</p>
+            </div>
+
+            <div class="completed-book-author">
+                <p>{{ book.book.author }}</p>
+            </div>
+
+            <div class="completed-book-overview">
+                <p>{{ book.book.overview }}</p>
+            </div>
+
+            <div class="completed-book-pages">
+                <p>{{ book.book.pages }}</p>
+            </div>
+
+            <div class="completed-book-update">
+                <a href="{{ url_for('update_book', book_id=book.book.id) }}">Haven't Completed This Book Yet? Update Here</a>
+            </div>
+
+            <!-- ADD THOUGHTS SECTION -->
+
+        </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

@@ -4,27 +4,27 @@
 <div class="update-container">
 
     <div class="book-info-container">
-        <div class="update-books-currently-reading-img">
+        <div class="update-books-img">
             <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
         </div>
-    <div class="update-books-currently-reading-title">
+    <div class="update-books-title">
         
         <p>{{ book.book.title }}</p>
     </div>
     
-    <div class="update-books-currently-reading-author">
+    <div class="update-books-author">
         <p>Author: {{ book.book.author }}</p>
     </div>
 
-    <div class="update-books-currently-reading-overview">
+    <div class="update-books-overview">
         <p>Overview: {{ book.book.overview }}</p>
     </div>
 
-    <div class="update-books-currently-reading-pages">
+    <div class="update-books-pages">
         <p>Page Count: {{ book.book.pages }}</p>
     </div>
 
-    <div class="update-books-currently-reading-pages-read"> 
+    <div class="update-books-pages-read"> 
         <p>Pages Read: {{ book.pages_read }}</p>
     </div>
 </div>
@@ -53,6 +53,7 @@
             <br>
             {{ form.currently_reading.label(class="form-label") }} {{ form.currently_reading }}
             <br>
+            {{ form.completed.label(class="form-label") }} {{ form.completed }}
             {{ form.submit(class="btn btn-primary") }}
         </form>
     </div>

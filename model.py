@@ -58,6 +58,7 @@ class Users_book(db.Model):
     books_id = db.Column(db.Integer, db.ForeignKey("books.id"))
     pages_read = db.Column(db.Integer)
     currently_reading = db.Column(db.Boolean)
+    completed = db.Column(db.Boolean)
 
     book = db.relationship("Book", backref="users_books", lazy=True)
     user = db.relationship("User", backref="users_books", lazy=True)
