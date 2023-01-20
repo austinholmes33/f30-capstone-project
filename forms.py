@@ -35,7 +35,7 @@ class UpdateBookForm(FlaskForm):
     title = StringField("Title", validators=[Length(min=6, max=255)])
     author = StringField("Author", validators=[Length(min=6, max=255)])
     pages = IntegerField("Pages", validators=[NumberRange(min=0, max=1000000)])
-    overview = TextAreaField("Overview", validators=[Length(max=255)])
+    overview = TextAreaField("Overview", validators=[Length(max=800)])
     cover_img = StringField("Cover Image")
     pages_read = IntegerField("Pages Read", validators=[NumberRange(min=0, max=1000000)])
     currently_reading = BooleanField("Currently Reading", default=False)

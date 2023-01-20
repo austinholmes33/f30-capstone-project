@@ -73,7 +73,8 @@ def update_book(book_id):
         form.completed.data = book.completed
         return render_template("update_book.html", form=form, book=book)
 
-    if request.method == "POST" and form.validate():
+
+    if request.method == "POST" and form.validate_on_submit():
         print("IF STATEMENT WORKING--------------------------------------------------")
         print(current_user.id)
         print(book_id)
