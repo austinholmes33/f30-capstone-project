@@ -8,7 +8,7 @@
     {% for book in current_user.users_books %}
         {% if book.completed %}
 
-        <div class="books-completed-img">
+        <div class="completed-book-img">
             <img class="book-cover-img" src="{{ book.book.cover_img }}"/>
         </div>
 
