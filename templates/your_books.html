@@ -102,11 +102,12 @@ whether or not they are currently reading, and general book info -->
                 <a href="{{ url_for('update_book', book_id=book.book.id) }}">Made Some Progress? Update Here!</a>
 
             </div>
+            <div id="progress-container">
+                <div id="progress-bar">1%</div>
+            </div>
             </div>
 
-        <!-- <div id="progress">
-        <div id="progress-bar">1%</div>
-        </div> -->
+
             {% endif %}
 
             {% endfor %}
