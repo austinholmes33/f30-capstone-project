@@ -1,4 +1,14 @@
 var i = 0;
+
+var percent = book.pages_read
+var total = book.book.pages
+
+// function progress() {
+    // if (percent === total) {
+    //     width === 100%
+    // }
+// }
+
 function progress() {
     if (i == 0) {
         i = 1;
