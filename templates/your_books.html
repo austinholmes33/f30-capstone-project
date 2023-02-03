@@ -45,7 +45,7 @@ whether or not they are currently reading, and general book info -->
 
 
                 <div class="books-not-currently-reading-update">
-                    <a href="{{ url_for('update_book', book_id=book.book.id)  }}">Started this book? Update Here!</a>
+                    <a href="{{ url_for('update_book', book_id=book.book.id)  }}" class="btn btn-dark">Started this book? Update Here!</a>
                 </div>
                 </div>
             {% endif %}
@@ -99,13 +99,14 @@ whether or not they are currently reading, and general book info -->
 
             <div class="books-currently-reading-update">
                 
-                <a href="{{ url_for('update_book', book_id=book.book.id) }}">Made Some Progress? Update Here!</a>
+                <a href="{{ url_for('update_book', book_id=book.book.id) }}" class="btn btn-dark">Made Some Progress? Update Here!</a>
 
             </div>
 
             <!-- <div id="progress-container"> -->
-                <div class="progress-bar">
-                <progress value="{{ book.pages_read }}" max="100">{{ book.pages_read }}</progress>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="max-width: 100%;" aria-valuenow="{{ book.pages_read }}" aria-valuemin="0" aria-valuemax="100">{{ book.pages_read }}%</div>
+
             </div>
         <!-- </div> -->
 
