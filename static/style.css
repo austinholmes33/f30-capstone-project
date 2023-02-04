@@ -472,10 +472,12 @@ html {
 .progress {
     max-width: 100%;
     margin: 10px;
+    margin-bottom: 10px;
+
 }
 
 .progress-bar {
-    height: 20px;
+    height: 15px;
     animation: progress-animation 4s forwards;
 }
 
