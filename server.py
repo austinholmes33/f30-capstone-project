@@ -27,6 +27,13 @@ def homepage():
 @app.route("/your_books")
 @login_required
 def your_books():
+
+    # def progress(num):
+    #     total = 100
+    #     bar_len = 20
+    #     filled_len = int(round(bar_len * num / float(total)))
+    #     return render_template('progress.html', filled_len=filled_len, bar_len=bar_len)
+
     return render_template("your_books.html")
 
 @app.route("/completed_books")
